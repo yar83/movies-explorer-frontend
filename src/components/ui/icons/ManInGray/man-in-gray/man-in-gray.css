@@ -1,0 +1,6 @@
+.man-in-gray {
+  width: 26px;
+  height: 30px;
+  border-radius: 4px;
+  background: no-repeat center/11.5px 14px url('../../../../../images/icons/man-in-gray.svg') var(--gray);
+}
