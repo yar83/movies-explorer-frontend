@@ -6,3 +6,18 @@
   border-radius: 50%;
   background: no-repeat center/14px 20px url(../../../../../images/buttons/s.svg) var(--green);
 }
+
+.s-circle:hover {
+  animation-duration: 2s;
+  animation-name: s-rotation;
+}
+
+@keyframes s-rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

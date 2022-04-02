@@ -13,3 +13,7 @@
 @import url(./_save/button_save.css);
 @import url(./_delete/button_delete.css);
 @import url(./_burger/button_burger.css);
+@import url(./_main/button_main.css);
+@import url(./_main-underscored/button_main-underscored.css);
+@import url(./_movies/button_movies.css);
+@import url(./_movies-underscored/button_movies.css);

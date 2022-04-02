@@ -12,4 +12,8 @@ export const moveButtonText = {
   register: 'Регистрация',
   back: 'Назад',
   enter: 'Войти',
+  main: 'Главная',
+  movies: 'Фильмы',
+  savedMovies: 'Сохранённые фильмы',
+  account: 'Аккаунт',
 }

@@ -3,7 +3,7 @@ import Button from './Button';
 import { actionButtonText, moveButtonText } from '../../../utils/constants/buttons/button-text';
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Design System/Atoms/Simple Button',
   component: Button,
 };
 
@@ -89,4 +89,25 @@ Delete.args = {
 export const Burger = Template.bind({});
 Burger.args = {
   type: 'burger',
+}
+
+export const Main = Template.bind({});
+Main.args = {
+  type: 'main',
+  text: moveButtonText.main,
+  menuCurPage: 'main',
+}
+
+export const Movies = Template.bind({});
+Movies.args = {
+  type: 'movies',
+  text: moveButtonText.movies,
+  menuCurPage: 'movies',
+}
+
+export const SavedMovies = Template.bind({});
+SavedMovies.args = {
+  type: 'movies',
+  text: moveButtonText.savedMovies,
+  menuCurPage: 'savedMovies',
 }

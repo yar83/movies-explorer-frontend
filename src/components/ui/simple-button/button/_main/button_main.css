@@ -1,0 +1,6 @@
+.button_main {
+  color: var(--white);
+  background: var(--black);
+  font: normal 18px/1.6 'Inter', sans-serif;
+  cursor: pointer;
+}

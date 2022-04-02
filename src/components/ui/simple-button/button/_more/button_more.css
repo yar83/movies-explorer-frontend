@@ -7,3 +7,7 @@
   font: 500 12px/1.2 'Inter', sans-serif;
   color: var(--white);
 }
+
+.button_more:hover {
+  background: var(--gray);
+}

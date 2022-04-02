@@ -5,4 +5,9 @@
   border-radius: 50px;
   color: var(--white);
   font: 400 10px/1 'Inter', sans-serif;
+  transition: background .2s ease-in;
+}
+
+.button_save:hover {
+  background: var(--gray-outline);
 }
