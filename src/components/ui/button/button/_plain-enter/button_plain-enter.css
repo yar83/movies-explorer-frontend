@@ -1,0 +1,5 @@
+.button_plain-enter {
+  background: var(--black);
+  color: var(--blue);
+  font: 500 12px/1.2 'Inter', sans-serif;
+}

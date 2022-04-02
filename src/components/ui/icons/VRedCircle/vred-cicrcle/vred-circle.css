@@ -1,0 +1,6 @@
+.vred-circle {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: no-repeat center/45% url('../../../../../images/buttons/v.svg') var(--red);
+}

@@ -1,0 +1,5 @@
+.button_plain-edit{
+  background: var(--black);
+  color: var(--white);
+  font: 500 12px/1.2 'Inter', sans-serif;
+}

@@ -1,0 +1,5 @@
+.button_plain-signout {
+  background: var(--black);
+  color: var(--red);
+  font: 500 12px/1.2 'Inter', sans-serif;
+}

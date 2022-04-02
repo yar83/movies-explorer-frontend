@@ -1,0 +1,5 @@
+.movie-duration_duration {
+  font: normal 11px/0.9 'Inter', sans-serif;
+  color: var(--gray-text);
+  padding: 2px 0 0 0;
+}

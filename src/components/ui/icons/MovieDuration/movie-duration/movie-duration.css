@@ -1,0 +1,10 @@
+.movie-duration {
+  width: 52px;
+  height: 18px;
+  border-radius: 3px;
+  color: var(--white);
+  background: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

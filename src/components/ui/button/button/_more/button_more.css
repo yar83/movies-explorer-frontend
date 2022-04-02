@@ -1,0 +1,9 @@
+.button_more {
+  border: 1px solid var(--gray-outline);
+  background: var(--black);
+  width: 240px;
+  height: 36px;
+  border-radius: 6px;
+  font: 500 12px/1.2 'Inter', sans-serif;
+  color: var(--white);
+}

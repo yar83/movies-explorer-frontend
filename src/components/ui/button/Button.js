@@ -1,8 +1,10 @@
 import React from 'react';
+import './button/index.css';
 
-const Button = ({ type }) => {
+const Button = ({ type, text }) => {
   return (
-    <button className={`button_${type}`}>
+    <button className={`button button_${type}`}>
+      {text ? text : ''}
     </button>
   );
 }
