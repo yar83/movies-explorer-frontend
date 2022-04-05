@@ -1,0 +1,10 @@
+@import url(./text-button.css);
+@import url(./_color/text-button_color-white.css);
+@import url(./_color/text-button_color-blue.css);
+@import url(./_color/text-button_color-red.css);
+@import url(./_font-size/button-text_font-size-10.css);
+@import url(./_font-size/button-text_font-size-12.css);
+@import url(./_font-size/button-text_font-size-14.css);
+@import url(./_font-size/button-text_font-size-18.css);
+@import url(./_font-weight/text-button_font-weight-regular.css);
+@import url(./_font-weight/text-button_font-weight-medium.css);

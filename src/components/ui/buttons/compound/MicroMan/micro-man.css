@@ -1,0 +1,46 @@
+.micro-man {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  color: var(--white);
+  font: 500 14px/1.2 'Inter', sans-serif;
+}
+
+.micro-man:hover {
+  cursor: pointer;
+}
+
+.micro-man:hover > .micro-man__flat > svg {
+  animation: rotation 1s ease-in;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}

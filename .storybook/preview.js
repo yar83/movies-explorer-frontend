@@ -1,6 +1,6 @@
-import '../src/utils/styles/fonts.css';
-import '../src/utils/styles/global.css';
-import '../src/utils/styles/palette.css';
+import '../src/shared/styles/fonts.css';
+import '../src/shared/styles/global.css';
+import '../src/shared/styles/palette.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

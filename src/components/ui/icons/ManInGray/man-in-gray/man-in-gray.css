@@ -1,9 +1,0 @@
-.man-in-gray {
-  width: 26px;
-  height: 30px;
-  border-radius: 4px;
-  background: var(--gray);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

@@ -1,6 +1,0 @@
-.button_delete {
-  width: 21px;
-  height: 21px;
-  border-radius: 50%;
-  background: no-repeat center/35% url('../../../../../images/buttons/white-cross.svg') var(--gray);
-}

@@ -1,0 +1,11 @@
+.icon-button_delete {
+  width: 21px;
+  height: 21px;
+  background: var(--gray);
+  border-radius: 50%;
+}
+
+.icon-button_delete > svg {
+  width: 9px;
+  height: 9px;
+}

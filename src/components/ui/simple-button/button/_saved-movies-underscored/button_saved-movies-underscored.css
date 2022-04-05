@@ -1,7 +1,0 @@
-.button_saved-movies-underscored {
-  color: var(--white);
-  background: var(--black);
-  font: normal 18px/1.6 'Inter', sans-serif;
-  border-bottom: 2px solid var(--white);
-  cursor: default;
-}

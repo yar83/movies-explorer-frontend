@@ -1,8 +1,0 @@
-.button_enter {
-  background: var(--green);
-  width: 54px;
-  height: 26px;
-  border-radius: 3px;
-  font: normal 500 10px/1.6 'Inter', sans-serif;
-  color: var(--black);
-}

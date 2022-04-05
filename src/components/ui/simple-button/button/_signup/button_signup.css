@@ -1,8 +1,0 @@
-.button_signup {
-  background: var(--blue);
-  width: 260px;
-  height: 45px;
-  border-radius: 3px;
-  font: 500 12px/1.2 'Inter', sans-serif;
-  color: var(--white);
-}
