@@ -1,0 +1,6 @@
+.movie-poster__image {
+  width: 300px;
+  height: 168px;
+  object-fit: fill;
+  border-radius: 6px;
+}

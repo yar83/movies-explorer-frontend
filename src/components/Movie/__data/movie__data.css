@@ -1,0 +1,5 @@
+.movie__data {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 0 0;
+}
