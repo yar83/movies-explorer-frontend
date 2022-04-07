@@ -6,6 +6,7 @@
   background: transparent;
   font: normal 10px/1 'Inter', sans-serif;
   cursor: pointer;
+  position: relative;
 }
 
 .text-button:hover {

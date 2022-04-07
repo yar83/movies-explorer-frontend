@@ -16,4 +16,13 @@ export const moveButtonText = {
   movies: 'Фильмы',
   savedMovies: 'Сохранённые фильмы',
   account: 'Аккаунт',
+  github: 'Github',
+  facebook: 'Facebook',
+  yandexPraktikum: 'Yandex.Практикум',
+  staticStite: 'Статичный сайт',
+  responsiveSite: 'Адаптивный сайт',
+  spa: 'Одностраничное приложение',
+  aboutProject: 'О проекте',
+  technologies: 'Технологии',
+  student: 'Студент',
 }

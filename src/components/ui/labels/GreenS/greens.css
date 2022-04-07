@@ -1,0 +1,9 @@
+.greens {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
