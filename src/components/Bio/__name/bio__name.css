@@ -1,0 +1,6 @@
+.bio__name {
+  margin: 0;
+  padding: 0 0 20px 0;
+  color: var(--white);
+  font: normal normal 30px/1 'Inter', sans-serif;
+}

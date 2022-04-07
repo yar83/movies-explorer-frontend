@@ -1,0 +1,6 @@
+.student-portrait {
+  width: 292px;
+  height: 352px;
+  border-radius: 10px;
+  object-fit: fill;
+}
