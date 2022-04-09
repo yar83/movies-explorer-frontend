@@ -1,4 +1,6 @@
 .bio__socials {
   display: grid;
-  gap: 26px 10px;
+  grid-template-columns: repeat(3, min-content);
+  justify-items: start;
+  gap: 10px 26px;
 }

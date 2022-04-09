@@ -17,7 +17,11 @@ export const userBio = {
     { 
       title: 'VKontakte',
       url: 'https://vk.com/laika.panda',
-    }
+    },
+    {
+      title: 'LinkedIn',
+      url: 'https://linkedin.com',
+    },
   ],
   portfolio: [
     {
