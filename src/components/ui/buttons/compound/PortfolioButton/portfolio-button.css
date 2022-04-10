@@ -6,8 +6,22 @@
   width: 292px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background: transparent;
   color: var(--white);
-  font: normal normal 18px/1.6 'Inter', sans-serif;
+  font: normal normal 18px/1.1 'Inter', sans-serif;
+  cursor: pointer;
+  transition: color .2s ease-in;
+}
+
+.portfolio-button:hover {
+  color: var(--gray-text);
+}
+
+.portfolio-button:hover > svg {
+  transform: rotate(45deg);
+}
+
+.portfolio-button > svg {
+  transition: transform .2s ease-in;
 }
