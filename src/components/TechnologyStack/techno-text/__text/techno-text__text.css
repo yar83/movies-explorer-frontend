@@ -1,0 +1,8 @@
+.techno-text__text {
+  margin: 0;
+  padding: 0;
+  width: 292px;
+  color: var(--white);
+  font: normal normal 11px/1.5 'Inter', sans-serif;
+  text-align: center;
+}

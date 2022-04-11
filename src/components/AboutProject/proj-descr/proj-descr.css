@@ -1,0 +1,9 @@
+.proj-descr {
+  width: 284px;
+  color: var(--white);
+  padding: 0 0 56px 0;
+}
+
+.proj-descr:last-child {
+  padding: 0 0 60px 0;
+}

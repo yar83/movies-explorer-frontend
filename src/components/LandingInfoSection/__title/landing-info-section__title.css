@@ -1,0 +1,9 @@
+.landing-info-section__title {
+  margin: 0;
+  padding: 0 0 22px 0;
+  margin: 0 0 58px 0;
+  width: 292px;
+  font: normal normal 18px/1 'Inter', sans-serif;
+  border-bottom: 2px solid var(--gray-text);
+  color: var(--white);
+}

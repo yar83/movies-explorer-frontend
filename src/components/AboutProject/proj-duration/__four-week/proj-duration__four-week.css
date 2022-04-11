@@ -1,0 +1,8 @@
+.proj-duration__four-week {
+  padding: 0;
+  margin: 0;
+  background: var(--gray);
+  color: var(--white);
+  font: normal normal 11px/35px 'Inter', sans-serif;
+  text-align: center;
+}

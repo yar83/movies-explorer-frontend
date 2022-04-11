@@ -1,0 +1,7 @@
+.proj-duration__one-week {
+  padding: 0;
+  margin: 0;
+  background: var(--green);
+  font: normal normal 11px/35px 'Inter', sans-serif;
+  text-align: center;
+}
