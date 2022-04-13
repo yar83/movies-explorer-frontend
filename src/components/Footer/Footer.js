@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="footer">
       <div className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</div>
       <div className="footer__content">
-        <div className="footer__copyright">© 2020</div>
+        <div className="footer__copyright">© 2022</div>
         <div className="footer__links">
           <TextButton
             label={moveButtonText.yandexPraktikum}

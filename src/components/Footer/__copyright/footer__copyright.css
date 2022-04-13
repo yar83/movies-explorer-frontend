@@ -1,0 +1,6 @@
+.footer__copyright {
+  padding: 0 6px 0;
+  color: var(--gray-text);
+  font: normal normal clamp(12px, 3.75vw, 13px)/1 'Inter', sans-serif;
+  text-align: center;
+}

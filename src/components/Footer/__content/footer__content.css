@@ -1,0 +1,5 @@
+.footer__content {
+  display: flex;
+  flex-flow: row wrap-reverse;
+  justify-content: center;
+}
