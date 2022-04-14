@@ -1,4 +1,5 @@
 .footer {
   display: flex;
   flex-flow: column;
+  width: min(93.75vw, 1140px);
 }

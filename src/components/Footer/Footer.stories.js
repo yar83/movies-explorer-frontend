@@ -8,3 +8,6 @@ export default {
 
 export const Default = () => <Footer />;
 Default.storyName = 'Footer';
+Default.parameters = {
+  layout: 'centered',
+};
