@@ -6,6 +6,7 @@ import LandingInfoSection from '../../LandingInfoSection/LandingInfoSection';
 import AboutProject from '../../AboutProject/AboutProject';
 import Student from '../../Student/Student';
 import TechnologyStack from '../../TechnologyStack/TechnologyStack';
+import Footer from '../../Footer/Footer';
 
 export default function Landing() {
   return (
@@ -21,6 +22,7 @@ export default function Landing() {
       <LandingInfoSection>
         <Student />
       </LandingInfoSection>
+      <Footer />
     </>
   );
 };
