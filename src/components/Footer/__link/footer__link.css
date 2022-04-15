@@ -1,0 +1,10 @@
+.footer__link {
+  font: normal normal min(3.75vw, 13px)/1 'Inter', sans-serif;
+  color: var(--white);
+  transition: color .2s ease-in-out;
+}
+
+.footer__link:hover {
+  color: var(--gray-text);
+  cursor: pointer;
+}

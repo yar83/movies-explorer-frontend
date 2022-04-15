@@ -1,0 +1,23 @@
+.main-inner-links__link {
+  position: relative;
+}
+
+.main-inner-links__link:hover {
+  cursor: pointer;
+}
+
+.main-inner-links__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0px;
+  border-bottom: 1px solid var(--white);
+}
+
+.main-inner-links__link:hover:after {
+  border-bottom: 1px dashed var(--white);
+}
+
+ 

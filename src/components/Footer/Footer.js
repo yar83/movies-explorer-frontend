@@ -1,5 +1,4 @@
 import React from 'react';
-import TextButton from '../ui/buttons/text/TextButton';
 import './index.css';
 import { moveButtonText } from '../../shared/constants/buttons/button-text';
 
@@ -11,24 +10,9 @@ export default function Footer() {
       <div className="footer__content">
         <div className="footer__copyright">© 2022</div>
         <div className="footer__links">
-          <TextButton
-            label={moveButtonText.yandexPraktikum}
-            color="white"
-            fontSize="12"
-            fontWeight="regular"
-          />
-          <TextButton
-            label={moveButtonText.github}
-            color="white"
-            fontSize="12"
-            fontWeight="regular"
-          />
-          <TextButton
-            label={moveButtonText.facebook}
-            color="white"
-            fontSize="12"
-            fontWeight="regular"
-          />
+          <span className="footer__link">{moveButtonText.yandexPraktikum}</span>
+          <span className="footer__link">{moveButtonText.github}</span>
+          <span className="footer__link">{moveButtonText.facebook}</span>
         </div>
       </div>
     </div>

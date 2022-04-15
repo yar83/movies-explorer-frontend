@@ -1,0 +1,15 @@
+.main-title__title {
+  margin: min(64.69vw, 326px) 0 0 0;
+  padding: 0;
+  color: var(--white);
+  width: min(93.75vw, 730px);
+  font: normal normal min(9.69vw, 50px)/min(12.19vw, 58px) 'Inter', sans-serif;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 769px) {
+  .main-title__title {
+    margin: calc(6.41vw + 102px) 0 0 0;
+  }
+}

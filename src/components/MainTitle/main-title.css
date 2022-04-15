@@ -1,0 +1,15 @@
+.main-title {
+  width: 100%;
+  height: min(178.125vw, 784px);
+  display: flex;
+  justify-content: center;
+  background: var(--aquamarine) no-repeat center min(44.375vw, 224px)/min(77.5vw, 320px) url(../../shared/images/backgrounds/main-title-backgrnd.svg);
+}
+
+@media (min-width: 769px) {
+  .main-title {
+    height: 524px;
+    background: var(--aquamarine) no-repeat center 6.41vw/min(77.5vw, 320px) url(../../shared/images/backgrounds/main-title-backgrnd.svg);
+  }
+}
+
