@@ -1,6 +1,13 @@
 .student-portrait {
-  width: 292px;
-  height: 352px;
+  width: 91.25vw;
+  height: 101vw;
   border-radius: 10px;
-  object-fit: fill;
+  object-fit: cover;
+}
+
+@media (min-width: 321px) {
+  .student-portrait {
+    width: clamp(255px, 33.20vw, 270px);
+    height: clamp(327px, 39.97vw, 327px);
+  }
 }

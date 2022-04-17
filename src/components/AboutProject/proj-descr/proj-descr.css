@@ -1,5 +1,6 @@
 .proj-descr {
-  width: 284px;
+  flex: 1 1 calc(50% - calc(3.91vw / 2));
+  min-width: 250px;
   color: var(--white);
   padding: 0 0 56px 0;
 }

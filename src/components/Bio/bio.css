@@ -1,5 +1,10 @@
 .bio {
-  max-width: 292px;
   margin: 0;
-  padding: 40px 0 69px 0;
+  padding: 0;
+}
+
+@media (min-width: 321px) {
+  .bio {
+    width: clamp(350px, 47.4vw, 600px);
+  }
 }

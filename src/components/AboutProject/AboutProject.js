@@ -3,7 +3,7 @@ import './index.css';
 
 export default function AboutProject() {
   return (
-    <>
+    <div className="about-project">
       <div className="proj-descr">
         <p className="proj-descr__title">Дипломный проект включал 5 этапов</p>
         <p className="proj-descr__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
@@ -18,6 +18,6 @@ export default function AboutProject() {
         <p className="proj-duration__stage">Back-end</p>
         <p className="proj-duration__stage">Front-end</p>
       </div>
-    </>
+    </div>
   );
 };

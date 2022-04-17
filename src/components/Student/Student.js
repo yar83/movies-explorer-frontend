@@ -9,13 +9,12 @@ import './index.css';
 
 export default function Student() {
   return (
-    <section className="student">
-      <h2 className="student__title">
-  Студент
-      </h2>
-        <StudentPortrait url={url} />
-        <Bio name={userBio.name} about={userBio.about} bio={userBio.bio} socials={userBio.socials} />
+    <div class="student">
+      <div className="student__info">
+          <Bio name={userBio.name} about={userBio.about} bio={userBio.bio} socials={userBio.socials} />
+          <StudentPortrait url={url} />
+      </div>
         <Portfolio portfolio={userBio.portfolio} />
-    </section>
+    </div>
   );
 };

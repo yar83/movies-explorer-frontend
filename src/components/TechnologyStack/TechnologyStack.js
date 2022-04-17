@@ -5,7 +5,7 @@ import './index.css';
 
 export default function TechnologyStack() {
   return (
-    <>
+    <div className="technos">
       <div className="techno-text">
         <p className="techno-text__title">7 технологий</p>
         <p className="techno-text__text">На курсе веб-разработки мы освоили технологии, которые применили в данном проекте.</p>
@@ -13,6 +13,6 @@ export default function TechnologyStack() {
       <div className="techno-stack">
         {technologies.map((techo, i) => <Technology label={techo} key={i} />)}
       </div>
-    </>
+    </div>
   );
 };

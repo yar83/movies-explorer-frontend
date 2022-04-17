@@ -2,5 +2,11 @@
   margin: 0;
   padding: 0 0 20px 0;
   color: var(--white);
-  font: normal normal 11px/16px 'Inter', sans-serif;
+  font: normal 500 min(3.44vw, 11px)/1 'Inter', sans-serif;
+}
+
+@media (min-width: 321px) {
+  .bio__about {
+    font: normal 500 clamp(12px, calc(2.35vw - 6px), 18px)/1 'Inter', sans-serif;
+  }
 }

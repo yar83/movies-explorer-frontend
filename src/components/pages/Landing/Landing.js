@@ -13,13 +13,13 @@ export default function Landing() {
     <>
       <MainTitle />
       <MainInnerLinks />
-      <LandingInfoSection>
-        <AboutProject />
+      <LandingInfoSection title="О проекте">
+        <AboutProject/>
       </LandingInfoSection>
-      <LandingInfoSection>
+      <LandingInfoSection title="Технологии">
         <TechnologyStack />
       </LandingInfoSection>
-      <LandingInfoSection>
+      <LandingInfoSection title="Студент">
         <Student />
       </LandingInfoSection>
       <Footer />

@@ -8,3 +8,6 @@ export default {
 
 export const Default = () => <Student />;
 Default.storyName = 'Student';
+Default.parameters = {
+  layout: 'centered',
+};

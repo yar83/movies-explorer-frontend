@@ -1,5 +1,5 @@
 .proj-descr__text {
-  font: normal normal 11px/1.5 'Inter', sans-serif;
+  font: normal normal calc(0.3125vw + 10px)/1.5 'Inter', sans-serif;
   padding: 0;
   margin: 0;
 }

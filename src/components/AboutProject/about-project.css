@@ -1,0 +1,7 @@
+.about-project {
+  width: min(88.75vw, 1140px);
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 min(3.91vw, 40px);
+  padding: min(18.75vw, 70px) 0 min(calc(4.16vw + 56.7px), 110px) 0;
+}

@@ -2,5 +2,5 @@
   margin: 0;
   padding: 0 0 40px 0;
   color: var(--white);
-  font: normal normal 11px/16px 'Inter', sans-seri
+  font: normal normal clamp(10px, calc(0.31vw + 10px), 14px)/clamp(14px, calc(0.2vw + 15.33px), 18px) 'Inter', sans-seri
 }

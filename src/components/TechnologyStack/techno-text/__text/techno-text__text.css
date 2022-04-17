@@ -1,8 +1,8 @@
 .techno-text__text {
   margin: 0;
   padding: 0;
-  width: 292px;
+  width: min(91.25vw, 460px);
   color: var(--white);
-  font: normal normal 11px/1.5 'Inter', sans-serif;
+  font: normal normal min(calc(0.3125vw + 10px), 14px)/1.5 'Inter', sans-serif;
   text-align: center;
 }

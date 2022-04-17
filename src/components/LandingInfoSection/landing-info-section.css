@@ -1,6 +1,22 @@
 .landing-info-section {
+  width: 100%;
+  padding: calc(0.041667 * 100vw + 56.67px) 0 0 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+.landing-info-section:nth-of-type(even) {
+  background: var(--gray-dark);
+}
+
+@media (max-width: 320px) {
+  .landing-info-section {
+    background: var(--black);
+  }
+
+  .landing-info-section:nth-of-type(even) {
+    background: var(--black);
+  }
 }
