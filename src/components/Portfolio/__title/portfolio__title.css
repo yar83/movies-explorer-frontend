@@ -4,3 +4,9 @@
   color: var(--gray-text);
   font: normal normal 14px/1.4 'Inter', sans-serif;
 }
+
+@media (min-width: 321px) {
+  .portfolio__title {
+    font: normal normal 18px/1.4 'Inter', sans-serif;
+  }
+}
