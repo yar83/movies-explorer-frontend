@@ -1,0 +1,13 @@
+.sign-form {
+  width: min(81.25vw, 396px);
+  height: 468px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 321px) {
+  .sign-form {
+    height: 380px;
+  }
+}

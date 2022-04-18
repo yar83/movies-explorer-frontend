@@ -1,0 +1,9 @@
+.signup-fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: min(81.25vw, 396px);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px 0;
+}

@@ -1,6 +1,6 @@
-.solid-button_blue-signin {
+.solid-button_blue-sign {
   background: var(--blue);
-  width: 260px;
+  width: 100%;
   height: 45px;
   border-radius: 3px;
   font: 500 12px/1.2 'Inter', sans-serif;

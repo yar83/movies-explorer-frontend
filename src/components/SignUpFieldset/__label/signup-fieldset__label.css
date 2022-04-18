@@ -1,0 +1,5 @@
+.signup-fieldset__label {
+  color: var(--gray-text);
+  font: normal normal 10px/1 'Inter', sans-serif;
+  margin: 0 0 10px 0;
+}
