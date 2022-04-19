@@ -1,12 +1,13 @@
 import React from 'react';
-import './movies.css';
-import Movie from '../Movie/Movie';
+import './index.css';
+import MoviesCard from '../MoviesCard/MoviesCard';
 
-export default function Movies({ movies }) {
+export default function MoviesCardList({ movies }) {
+
   return (
-    <div className="movies">
+    <div className="movies-card-list">
     {movies.map((movie) => (
-      <Movie
+      <MoviesCard
         key={movie.id}
         id={movie.id}
         title={movie.title}

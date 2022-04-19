@@ -7,14 +7,14 @@ import SolidButton from '../ui/buttons/solid/SolidButton';
 import MovieTitle from '../ui/labels/MovieTitle/MovieTitle';
 import {actionButtonText} from '../../shared/constants/buttons/button-text';
 
-export default function Movie({ id, title, duration = 0, posterUrl }) {
+export default function MoviesCard({ id, title, duration = 0, posterUrl }) {
   return (
-    <div className="movie">
+    <div className="movies-card">
       <MoviePoster url={posterUrl} />
-      <div className="movie__label">
+      <div className="movies-card__label">
         <SolidButton view="gray-save" label={actionButtonText.save} />
       </div>
-      <div className="movie__data">
+      <div className="movies-card__data">
         <MovieTitle title={title} />
         <MovieDuration duration={duration} />
       </div>
