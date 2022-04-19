@@ -16,7 +16,7 @@ export default function Register() {
     <div className="register">
       <GreenS />
       <h1 className="register__header">Добро пожаловать!</h1>
-      <SignForm buttonData={buttonData}>
+      <SignForm buttonData={buttonData} formPurpose="signup">
         <SignUpFieldset />
       </SignForm>
       <div className="register__footer">

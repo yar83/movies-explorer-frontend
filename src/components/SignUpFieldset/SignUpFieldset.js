@@ -11,7 +11,7 @@ export default function SignUpFieldset() {
       </p>
       <p className="signup-fieldset__item">
         <label className="signup-fieldset__label" for="email">E-mail</label>
-        <input type="text" className="signup-fieldset__input" name="name" id="email" placeholder="mail@yandex.ru" required></input>
+        <input type="email" className="signup-fieldset__input" name="email" id="email" placeholder="mail@yandex.ru" required></input>
         <span className="signup-fieldset__error">Некорректный email</span>
       </p>
       <p className="signup-fieldset__item">

@@ -1,0 +1,3 @@
+.signin-fieldset__input_error {
+  outline: 1px solid var(--red);
+}
