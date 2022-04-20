@@ -60,6 +60,11 @@
     "@storybook/testing-library": "^0.0.9",
     "@svgr/webpack": "^6.2.1",
     "chromatic": "^6.5.3",
+    "msw": "^0.39.2",
+    "msw-storybook-addon": "^1.6.3",
     "webpack": "^5.70.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

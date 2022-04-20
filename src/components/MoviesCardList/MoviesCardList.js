@@ -12,7 +12,7 @@ export default function MoviesCardList({ movies }) {
         id={movie.id}
         title={movie.title}
         duration={movie.duration}
-        posterUrl={`https://api.nomoreparties.co/uploads/${movie.poster}`}
+        posterUrl={`https://api.nomoreparties.co${movie.posterUrl}`}
       />
     ))}
     </div>

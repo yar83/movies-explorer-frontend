@@ -1,2 +1,3 @@
 @import url(./movie-poster.css);
+@import url(./__frame/movie-poster__frame.css);
 @import url(./__image/movie-poster__image.css);
