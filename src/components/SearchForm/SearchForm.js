@@ -1,6 +1,8 @@
 import React from 'react';
 import SolidButton from '../ui/buttons/solid/SolidButton';
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import { actionButtonText } from '../../shared/constants/buttons/button-text'; 
+import { checkBoxCaptions } from '../../shared/constants/captions/captions';
 import './index.css';
 
 export default function SearchForm() {
@@ -23,6 +25,7 @@ export default function SearchForm() {
         </form>
       </div>
       <div className="search-form__shorts">
+        <FilterCheckbox label={checkBoxCaptions.shortMeters} />
       </div>
     </section>
   );
