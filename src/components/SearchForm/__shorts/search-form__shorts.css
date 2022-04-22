@@ -1,3 +1,17 @@
 .search-form__shorts {
   flex: 1 1 100%;
+  padding: 0 0 63px 0;
+  border-bottom: 1px solid var(--gray);
+}
+
+@media (min-width: 321px) {
+  .search-form__shorts {
+    padding: 0 0 51px 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .search-form__shorts {
+    padding: 0 0 43px 0;
+  }
 }

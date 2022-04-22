@@ -1,0 +1,8 @@
+.movies-section__more {
+  width: 100%;
+  padding: 50px 0 80px;
+  display: flex;
+  justify-content: center;
+
+  border: 1px solid yellow;
+}
