@@ -1,0 +1,5 @@
+@import url(./search-form.css);
+@import url(./__form/search-form__form.css);
+@import url(./__form-entity/search-form__form-entity.css);
+@import url(./__search-input/search-form__search-input.css);
+@import url(./__shorts/search-form__shorts.css);

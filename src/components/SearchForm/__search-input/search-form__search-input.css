@@ -1,0 +1,10 @@
+.search-form__search-input {
+  height: clamp(30px, 14vw, 48px);
+  font: normal normal min(5vw, 18px)/1 'Inter', sans-serif;
+  color: var(--gray-text);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0 min(3.75vw, 25px);
+  flex: 1 1 150px;
+}

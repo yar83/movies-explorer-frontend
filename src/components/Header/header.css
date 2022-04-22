@@ -1,19 +1,18 @@
 .header {
   display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 min(4.375vw, 14px);
   margin: 0;
-  width: 100vw;
-  border: 1px solid yellow;
+  width: min(100vw, 1280px);
+  box-sizing: border-box;
 }
 
 .header > .micro-man {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 321px) {
   .header {
     padding: 0 min(3.91vw, 30px);
   }

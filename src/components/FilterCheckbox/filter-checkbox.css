@@ -1,0 +1,5 @@
+.filter-checkbox {
+  color: var(--white);
+  font: normal normal min(3.44vw, 13px)/18px 'Inter', sans-serif;
+  width: min-content;
+}
