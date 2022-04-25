@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileFieldset from './ProfileFieldset';
 
 export default {
-  title: 'Design System/Molecules/ProfileFieldset',
+  title: 'Design System/Molecules/Profile Fieldset',
   component: ProfileFieldset,
 };
 

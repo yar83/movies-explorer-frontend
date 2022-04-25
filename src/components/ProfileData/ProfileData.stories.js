@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileData from './ProfileData';
 
 export default {
-  title: 'Design System/Molecules/ProfileData',
+  title: 'Design System/Molecules/Profile Data',
   component: ProfileData,
 };
 
