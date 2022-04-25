@@ -5,7 +5,7 @@ import { moveButtonText } from '../../shared/constants/buttons/button-text';
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</div>
       <div className="footer__content">
         <div className="footer__copyright">© 2022</div>
@@ -15,6 +15,6 @@ export default function Footer() {
           <span className="footer__link">{moveButtonText.facebook}</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
