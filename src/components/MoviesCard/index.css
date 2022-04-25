@@ -1,3 +1,4 @@
 @import url(./movies-card.css);
+@import url(./__screen/movies-card__screen.css);
 @import url(./__label/movies-card__label.css);
 @import url(./__data/movies-card__data.css);

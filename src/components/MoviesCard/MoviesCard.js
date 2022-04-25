@@ -10,9 +10,11 @@ import {actionButtonText} from '../../shared/constants/buttons/button-text';
 export default function MoviesCard({ id, title, duration = 0, posterUrl }) {
   return (
     <div className="movies-card">
-      <MoviePoster url={posterUrl} />
-      <div className="movies-card__label">
-        <SolidButton view="gray-save" label={actionButtonText.save} />
+      <div className="movies-card__screen">
+        <MoviePoster url={posterUrl} />
+        <div className="movies-card__label">
+          <SolidButton view="gray-save" label={actionButtonText.save} />
+        </div>
       </div>
       <div className="movies-card__data">
         <MovieTitle title={title} />

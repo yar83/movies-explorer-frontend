@@ -1,17 +1,17 @@
 .movies-card-list {
-  width: min(93.75vw, 300px);
+  width: 93.75vw;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 39px 30px;
+  gap: 11.25vw 30px;
   padding: 0;
   margin: 0 auto;
 }
 
 @media (min-width: 321px) {
   .movies-card-list {
-    width: min(92.19vw, 708px);
-    grid-template-columns: 1fr 1fr;
-    gap: 47px 30px;
+    width: 92.19vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: min(6.12vw, 47px) 30px;
   }
 }
 
@@ -19,6 +19,6 @@
   .movies-card-list {
     width: min(91.41vw, 1140px);
     grid-template-columns: repeat(3, 1fr);
-    gap: 47px 30px;
+    gap: min(4.61vw, 59px) 30px;
   }
 }
