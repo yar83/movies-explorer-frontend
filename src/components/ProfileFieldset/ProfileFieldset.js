@@ -2,9 +2,6 @@ import React from 'react';
 import './index.css';
 
 export default function ProfileFieldset() {
-  const userName = 'Виталий';
-  const userEmail = 'pochta@yandex.ru';
-
   return (
     <fieldset className="profile-fieldset">
       <p className="profile-fieldset__item">

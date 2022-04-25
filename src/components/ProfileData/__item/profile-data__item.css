@@ -1,11 +1,13 @@
-.profile-fieldset__item {
+.profile-data__item {
   padding: 0;
   margin: 0;
   height: 43px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  color: var(--white);
 }
 
-.profile-fieldset__item:nth-child(1) {
+.profile-data__item:nth-child(1) {
   border-bottom: 1px solid var(--gray);
 }
