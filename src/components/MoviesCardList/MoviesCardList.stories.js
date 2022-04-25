@@ -24,6 +24,7 @@ export const MCS = () => {
           posterUrl: json[i].image.url,
         });
       };
+      console.log(moviesArr);
       setMovies(moviesArr);
       })
     .catch((err) => console.log(err));
