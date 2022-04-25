@@ -1,0 +1,10 @@
+.profile-fieldset__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  height: 23px;
+  font: normal 500 11px/1 'Inter', sans-serif;
+  color: var(--white);
+  width: 100%;
+}

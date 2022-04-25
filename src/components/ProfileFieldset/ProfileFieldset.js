@@ -1,0 +1,20 @@
+import React from 'react';
+import './index.css';
+
+export default function ProfileFieldset() {
+  const userName = 'Виталий';
+  const userEmail = 'pochta@yandex.ru';
+
+  return (
+    <fieldset className="profile-fieldset">
+      <p className="profile-fieldset__item">
+        <label className="profile-fieldset__label" for="name"></label>
+        <input className="profile-fieldset__input" type="text" id="name" name="name" placeholder="Имя" required />
+      </p>
+      <p className="profile-fieldset__item">
+        <label className="profile-fieldset__label" for="emain"></label>
+        <input className="profile-fieldset__input" type="email" id="email" name="email" placeholder="E-mail" required />
+      </p>
+    </fieldset>
+  );
+};
