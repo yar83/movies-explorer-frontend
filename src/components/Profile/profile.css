@@ -1,0 +1,20 @@
+.profile {
+  padding: 70px 0 0 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 80px 0;
+}
+
+@media (min-width: 321px) {
+  .profile {
+    gap: 96px 0;
+    padding: 236px 0 0 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile {
+    gap: 123px 0;
+    padding: 74px 0 0 0;
+  }
+}

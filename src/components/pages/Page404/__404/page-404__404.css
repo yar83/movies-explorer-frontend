@@ -1,0 +1,14 @@
+.page-404__404 {
+  color: var(--white);
+  padding: 0 0 10px 0;
+  margin: 0;
+  text-align: center;
+  font: normal normal 80px/1 'Inter', sans-serif;
+}
+
+@media (min-width: 321px) {
+  .page-404__404 {
+    padding: 0 0 5px 0;
+    font: normal normal 140px/1 'Inter', sans-serif;
+  }
+}
