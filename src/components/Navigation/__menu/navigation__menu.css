@@ -1,0 +1,9 @@
+.navigation__menu {
+  padding: min(31.25vw, 105px) 0 0 0;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: min(7.5vw, 28px) 0;
+}

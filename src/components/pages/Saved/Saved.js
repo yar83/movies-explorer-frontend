@@ -5,12 +5,12 @@ import MoviesSection from '../../MoviesSection/MoviesSection';
 import Footer from '../../Footer/Footer';
 import './index.css';
 
-export default function Saved() {
+export default function Saved({ movies }) {
   return (
     <>
       <Header />
       <SearchForm />
-      <MoviesSection />
+      <MoviesSection movies={movies} />
       <Footer />
     </>
   );

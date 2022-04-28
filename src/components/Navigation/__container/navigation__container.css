@@ -1,0 +1,11 @@
+.navigation__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: min(100vw, 520px);
+  display: flex;
+  flex-flow: column nowrap;
+  
+  background: var(--gray-dark);
+}
