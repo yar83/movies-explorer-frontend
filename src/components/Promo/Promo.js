@@ -1,9 +1,9 @@
 import React from 'react';
 import './index.css';
 
-export default function AboutProject() {
+export default function Promo() {
   return (
-    <div className="about-project">
+    <div className="promo">
       <div className="proj-descr">
         <p className="proj-descr__title">Дипломный проект включал 5 этапов</p>
         <p className="proj-descr__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
