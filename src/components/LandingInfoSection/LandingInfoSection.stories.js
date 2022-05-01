@@ -4,7 +4,7 @@ import StudentPortrait from '../ui/pictures/StudentPortrait/StudentPortrait';
 import Bio from '../Bio/Bio';
 import Portfolio from '../Portfolio/Portfolio';
 import TechnologyStack from '../TechnologyStack/TechnologyStack';
-import AboutProject from '../AboutProject/AboutProject';
+import Promo from '../Promo/Promo';
 
 import portraitUrl from '../../../public/yarb.png';
 import { userBio } from '../../shared/constants/userbio/userbio';
@@ -28,7 +28,7 @@ const student = (
 
 const technos = <TechnologyStack labels={technologies} />;
 
-const aboutProj = <AboutProject />;
+const promo = <Promo />;
 
 
 export const Student = Default.bind({});
@@ -47,5 +47,5 @@ export const AboutProj = Default.bind({});
 AboutProj.storyName = 'About Project';
 AboutProj.args = {
   title: 'О проекте',
-  children: aboutProj,
+  children: promo,
 };

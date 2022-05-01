@@ -1,12 +1,12 @@
-.main-inner-links__link {
+.nav-tab__link {
   position: relative;
 }
 
-.main-inner-links__link:hover {
+.nav-tab__link:hover {
   cursor: pointer;
 }
 
-.main-inner-links__link::after {
+.nav-tab__link::after {
   content: '';
   position: absolute;
   left: 0;
@@ -17,7 +17,7 @@
   transition: left ease-out .3s, right ease-out .3s;
 }
 
-.main-inner-links__link:hover:after {
+.nav-tab__link:hover:after {
   left: 50%;
   right: 50%;
 }
