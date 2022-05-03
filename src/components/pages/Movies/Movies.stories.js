@@ -33,6 +33,3 @@ export const Default = () => {
 };
 
 Default.storyName = 'Movies';
-Default.parameters = {
-  layout: 'centered',
-};

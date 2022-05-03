@@ -3,7 +3,7 @@ import StudentPortrait from '../ui/pictures/StudentPortrait/StudentPortrait';
 import Bio from '../Bio/Bio';
 import Portfolio from '../Portfolio/Portfolio';
 import { userBio } from '../../shared/constants/userbio/userbio';
-import url from '../../../public/yarb.png';
+import url from '../../shared/images/student/yarb.png';
 
 import './index.css';
 

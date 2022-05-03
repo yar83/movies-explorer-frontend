@@ -32,6 +32,3 @@ export const Default = () => {
   return <Saved movies={movies} />;
 };
 Default.storyName = 'Saved';
-Default.parameters = {
-  layout: 'centered',
-};

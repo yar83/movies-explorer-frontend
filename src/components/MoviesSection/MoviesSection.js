@@ -5,12 +5,17 @@ import { actionButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
 export default function MoviesSection({ movies }) {
+
+  
+
   return (
     <section class="movies-section">
       <MoviesCardList movies={movies} />
-      <div className="movies-section__more">
-        <GhostButton label={actionButtonText.more} />
-      </div>
+      { movies.length > 3 &&
+        <div className="movies-section__more">
+          <GhostButton label={actionButtonText.more} />
+        </div>
+      }
     </section>
   );
 };
