@@ -1,16 +1,26 @@
 import React from 'react';
-import Header from '../../Header/Header';
-import SearchForm from '../../SearchForm/SearchForm';
-import MoviesSection from '../../MoviesSection/MoviesSection';
+import MainTitle from '../../MainTitle/MainTitle';
+import NavTab from '../../NavTab/NavTab';
+import LandingInfoSection from '../../LandingInfoSection/LandingInfoSection';
+import Promo from '../../Promo/Promo';
+import Student from '../../Student/Student';
+import TechnologyStack from '../../TechnologyStack/TechnologyStack';
 import Footer from '../../Footer/Footer';
-import './index.css';
 
-export default function Main({ movies }) {
+export default function Main() {
   return (
     <>
-      <Header />
-      <SearchForm />
-      <MoviesSection movies={movies} />
+      <MainTitle />
+      <NavTab />
+      <LandingInfoSection title="О проекте">
+        <Promo />
+      </LandingInfoSection>
+      <LandingInfoSection title="Технологии">
+        <TechnologyStack />
+      </LandingInfoSection>
+      <LandingInfoSection title="Студент">
+        <Student />
+      </LandingInfoSection>
       <Footer />
     </>
   );
