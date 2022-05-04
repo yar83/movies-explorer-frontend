@@ -1,5 +1,6 @@
 import React from 'react';
-import MainHeader from '../MainHeader/MainHeader';import './index.css';
+import MainHeader from '../MainHeader/MainHeader';
+import './index.css';
 
 export default function MainTitle() {
   return (

@@ -9,7 +9,7 @@ import './index.css';
 
 export default function Student() {
   return (
-    <div class="student">
+    <div className="student">
       <div className="student__info">
           <Bio name={userBio.name} about={userBio.about} bio={userBio.bio} socials={userBio.socials} />
           <StudentPortrait url={url} />
