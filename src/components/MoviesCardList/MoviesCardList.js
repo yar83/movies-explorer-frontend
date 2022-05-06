@@ -7,14 +7,14 @@ export default function MoviesCardList({ movies }) {
   return (
     <div className="movies-card-list">
       {movies.map((movie) => (
-      <MoviesCard
-        key={movie.id}
-        id={movie.id}
-        title={movie.title}
-        duration={movie.duration}
-        posterUrl={`https://api.nomoreparties.co${movie.posterUrl}`}
-      />
-    ))}
+        <MoviesCard
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          duration={movie.duration}
+          posterUrl={`https://api.nomoreparties.co${movie.posterUrl}`}
+        />
+      ))}
     </div>
   );
 };

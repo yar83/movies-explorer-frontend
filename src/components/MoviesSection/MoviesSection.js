@@ -6,10 +6,8 @@ import './index.css';
 
 export default function MoviesSection({ movies }) {
 
-  
-
   return (
-    <section class="movies-section">
+    <section className="movies-section">
       <MoviesCardList movies={movies} />
       { movies.length > 3 &&
         <div className="movies-section__more">

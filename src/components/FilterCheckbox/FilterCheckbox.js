@@ -4,7 +4,7 @@ import './index.css';
 export default function FilterCheckbox({ label }) {
  return (
    <div className="filter-checkbox">
-     <label className="filter-checkbox__label" for="shorts-checkbox">
+     <label className="filter-checkbox__label" htmlFor="shorts-checkbox">
        <input
          type="checkbox"
          className="filter-checkbox__checkbox"
