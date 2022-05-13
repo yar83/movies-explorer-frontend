@@ -3,14 +3,14 @@ import './index.css';
 
 export default function SignInFieldset() {
   return (
-    <fieldset class="signin-fieldset">
-      <p class="signin-fieldset__item">
-        <label className="signup-fieldset__label" for="email">E-mail</label>
+    <fieldset className="signin-fieldset">
+      <p className="signin-fieldset__item">
+        <label className="signup-fieldset__label" htmlFor="email">E-mail</label>
         <input className="signin-fieldset__input signin-fieldset__input_error" type="email" id="email" name="email" placeholder="Иван" required></input>
         <span className="signin-fieldset__error">Пишите кириллицей</span>
       </p>
-      <p class="signin-fieldset__item">
-        <label className="signup-fieldset__label" for="password">Пароль</label>
+      <p className="signin-fieldset__item">
+        <label className="signup-fieldset__label" htmlFor="password">Пароль</label>
         <input className="signin-fieldset__input signin-fieldset__input_correct" type="password" id="password" name="password" placeholder="••••••••••" required></input>
         <span className="signin-fieldset__error">Пароль необходим</span>        
       </p>
