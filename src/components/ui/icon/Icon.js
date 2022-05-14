@@ -7,10 +7,8 @@ export default function Icon(props) {
   } = props;
 
   const IconComponent = icons[glyph];
+
   return (
-    <IconComponent
-      focusable={false}
-      aria-hidden
-    />
+    <IconComponent />
   );
 };

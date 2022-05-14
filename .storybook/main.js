@@ -1,6 +1,6 @@
 module.exports = {
   webpackFinal: async (config) => {
-    config.module.rules[5].oneOf[2].use = ['@svgr/webpack'];
+    // config.module.rules[5].oneOf[2].use = ['@svgr/webpack'];
     config.module.rules.forEach((rule, i) => console.log(i, rule));
     return config;
   },

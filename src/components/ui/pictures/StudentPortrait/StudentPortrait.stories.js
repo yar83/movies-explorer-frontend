@@ -1,6 +1,6 @@
 import React from 'react';
 import StudentPortrait from './StudentPortrait';
-import logo from '../../../../../public/yarb.png';
+import logo from '../../../../shared/images/student/yarb.png';
 
 export default {
   title: 'Design System/Atoms/Student Portrait',

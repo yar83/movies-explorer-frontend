@@ -4,3 +4,9 @@
   justify-items: start;
   gap: 10px 26px;
 }
+
+@media (min-width: 769px) {
+  .bio__socials {
+    grid-template-columns: repeat(5, min-content);
+  }
+}

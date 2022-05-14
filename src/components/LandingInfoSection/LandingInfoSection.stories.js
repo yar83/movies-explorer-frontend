@@ -6,7 +6,7 @@ import Portfolio from '../Portfolio/Portfolio';
 import TechnologyStack from '../TechnologyStack/TechnologyStack';
 import Promo from '../Promo/Promo';
 
-import portraitUrl from '../../../public/yarb.png';
+import portraitUrl from '../../shared/images/student/yarb.png';
 import { userBio } from '../../shared/constants/userbio/userbio';
 import { technologies } from '../../shared/constants/technologies';
 

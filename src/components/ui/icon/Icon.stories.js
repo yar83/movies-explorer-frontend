@@ -8,7 +8,9 @@ export default {
   argTypes: {
     glyph: {
       options: Object.keys(icons),
-      control: {type: 'radio'},
+      control: {
+        type: 'radio'
+      },
     },
   },
 };
