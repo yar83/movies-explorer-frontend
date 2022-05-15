@@ -1,5 +1,6 @@
 import React from 'react';
-import GreenS from '../../ui/labels/GreenS/GreenS';
+import { useNavigate } from 'react-router-dom';
+import GreenSButton from '../../ui/buttons/compound/GreenS/GreenSButton';
 import TextButton from '../../ui/buttons/text/TextButton';
 import SignForm from '../../SignForm/SignForm';
 import SignInFieldset from '../../SignInFieldset/SignInFieldset';
@@ -12,9 +13,15 @@ export default function SignIn() {
     label: actionButtonText.signin,
   };
 
+  let navigate = useNavigate();
+
+  const moveToMainPage = () => {
+    navigate('../');
+  };
+
   return (
-    <div className="signin">
-      <GreenS />
+    <section className="signin">
+      <GreenSButton handleClick={moveToMainPage} />
       <h1 className="signin__header">Добро пожаловать!</h1>
       <SignForm buttonData={buttonData} formPurpose="signin">
         <SignInFieldset />
@@ -28,6 +35,6 @@ export default function SignIn() {
           fontWeight="regular"
         />
       </div>
-    </div>
+    </section>
   );
 };
