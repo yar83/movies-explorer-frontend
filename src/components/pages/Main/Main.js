@@ -12,13 +12,13 @@ export default function Main() {
     <>
       <MainTitle />
       <NavTab />
-      <LandingInfoSection title="О проекте">
+      <LandingInfoSection title="О проекте" link="about">
         <Promo />
       </LandingInfoSection>
-      <LandingInfoSection title="Технологии">
+      <LandingInfoSection title="Технологии" link="technologies">
         <TechnologyStack />
       </LandingInfoSection>
-      <LandingInfoSection title="Студент">
+      <LandingInfoSection title="Студент" link="student">
         <Student />
       </LandingInfoSection>
       <Footer />
