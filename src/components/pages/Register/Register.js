@@ -1,5 +1,6 @@
 import React from 'react';
-import GreenS from '../../ui/labels/GreenS/GreenS';
+import { useNavigate } from 'react-router-dom';
+import GreenSButton from '../../ui/buttons/compound/GreenS/GreenSButton';
 import TextButton from '../../ui/buttons/text/TextButton';
 import SignForm from '../../SignForm/SignForm';
 import SignUpFieldset from '../../SignUpFieldset/SignUpFieldset';
@@ -7,14 +8,20 @@ import { actionButtonText, moveButtonText } from '../../../shared/constants/butt
 import './index.css'
 
 export default function Register() {
+  let navigate = useNavigate();
+
+  const moveToMainPage = () => {
+    navigate('../');
+  };
+
   const buttonData = {
     view: 'blue-sign',
     label: actionButtonText.signup,
   };
 
   return (
-    <div className="register">
-      <GreenS />
+    <section className="register">
+      <GreenSButton handleClick={moveToMainPage} />
       <h1 className="register__header">Добро пожаловать!</h1>
       <SignForm buttonData={buttonData} formPurpose="signup">
         <SignUpFieldset />
@@ -28,6 +35,6 @@ export default function Register() {
           fontWeight="regular"
         />
       </div>
-    </div>
+    </section>
   );
 };

@@ -1,5 +1,6 @@
 .register {
   width: min(100%, 396px);
+  padding: 56px 0 0 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -7,7 +8,17 @@
 }
 
 @media (min-width: 321px) {
-  .register > .greens {
+  .register > .green-s-button {
     align-self: flex-start;
+  }
+
+  .register {
+    padding: min(30vw, 232px) 0 0 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .register {
+    padding: 70px 0 0 0;
   }
 }
