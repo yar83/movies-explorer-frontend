@@ -1,0 +1,10 @@
+.footer__link-entity {
+  color: var(--white);
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+}
+
+.footer__link-entity:hover {
+  color: var(--gray-text);
+  cursor: pointer;
+}

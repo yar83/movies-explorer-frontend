@@ -10,9 +10,21 @@ export default function Footer() {
       <div className="footer__content">
         <div className="footer__copyright">© 2022</div>
         <div className="footer__links">
-          <span className="footer__link">{moveButtonText.yandexPraktikum}</span>
-          <span className="footer__link">{moveButtonText.github}</span>
-          <span className="footer__link">{moveButtonText.facebook}</span>
+          <span className="footer__link">
+            <a href="https://praktikum.yandex.ru" className="footer__link-entity" target="blank">
+              {moveButtonText.yandexPraktikum}
+            </a>
+          </span>
+          <span className="footer__link">
+            <a href="https://github.com/yar83" className="footer__link-entity" target="blank">
+              {moveButtonText.github}
+            </a>
+          </span>
+          <span className="footer__link">
+            <a href="https://facebook.com/yar.bashmakov" className="footer__link-entity" target="blank">
+              {moveButtonText.facebook}
+            </a>
+          </span>
         </div>
       </div>
     </footer>
