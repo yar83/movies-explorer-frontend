@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import GreenS from '../ui/labels/GreenS/GreenS';
+import GreenSButton from '../ui/buttons/compound/GreenS/GreenSButton';
 import TextButton from '../ui/buttons/text/TextButton';
 import MicroManButton from '../ui/buttons/compound/MicroMan/MicroManButton';
 import IconButton from '../ui/buttons/icon/IconButton';
@@ -21,12 +21,16 @@ export default function Header() {
     navigate('../profile');
   };
 
+  const moveToMainPage = () => {
+    navigate('../');
+  };
+
   let location = useLocation();
 
   return (
     <header className="header">
       <div className="header__greens">
-        <GreenS />
+        <GreenSButton handleClick={moveToMainPage} />
       </div>
       <nav className="header__nav">
         <ul className="header__nav-list">
