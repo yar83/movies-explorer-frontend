@@ -10,6 +10,10 @@ export default function Bio(props) {
     socials,
   } = props;
 
+  const openLink = (label) => {
+    window.open(socials.find(el => el.title === label).url, "_blank");
+  };
+
   return (
     <div className="bio">
       <h3 className="bio__name">
@@ -22,7 +26,7 @@ export default function Bio(props) {
         { bio }
       </p>
       <div className="bio__socials">
-        {socials.map((social, i) => <TextButton label={social.title} color='white' fontSize='14' fontWeight='medium' key={i} />)}
+        {socials.map((social, i) => <TextButton label={social.title} color='white' fontSize='14' fontWeight='medium' key={i} handleClick={openLink} />)}
       </div>
     </div>
   );

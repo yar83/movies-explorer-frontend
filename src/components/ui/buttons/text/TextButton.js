@@ -11,8 +11,12 @@ export default function TextButton(props) {
     handleClick,
   } = props;
 
+  const clickHandler = () => {
+    handleClick(label);
+  };
+
   return (
-    <button className={`text-button text-button_color-${color} text-button_font-size-${fontSize} text-button_font-weight-${fontWeight} ${underScored ? 'text-button_underscored' : ''}`} onClick={handleClick}>
+    <button className={`text-button text-button_color-${color} text-button_font-size-${fontSize} text-button_font-weight-${fontWeight} ${underScored ? 'text-button_underscored' : ''}`} onClick={clickHandler}>
       {label}
     </button>
   );

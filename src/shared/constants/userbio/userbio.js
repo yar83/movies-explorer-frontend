@@ -16,7 +16,7 @@ export const userBio = {
       url: 'https://www.upwork.com/freelancers/~0193083a7b1918cfbf?s=1110580755107926016'},
     { 
       title: 'VKontakte',
-      url: 'https://vk.com/laika.panda',
+      url: 'https://vk.com/laika_panda',
     },
     {
       title: 'LinkedIn',
@@ -26,7 +26,7 @@ export const userBio = {
   portfolio: [
     {
       title: 'Статичный сайт',
-      url: 'https://yar83.github.io/russian-travel/index.html',
+      url: 'https://github.com/yar83/how-to-learn',
     },
     {
       title: 'Адаптивный сайт',
@@ -34,7 +34,7 @@ export const userBio = {
     },
     {
       title: 'Одностраничное приложение',
-      url: 'https://yar83.github.io/russian-travel/index.html',
+      url: 'https://elcaminoruso.students.nomoredomains.rocks/log-in',
     },
   ],
 };
