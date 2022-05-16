@@ -27,9 +27,9 @@ export default function SignIn() {
         <SignInFieldset />
       </SignForm>
       <div className="signin__footer">
-        <p className="signin__notregyet">Уже зарегистрированы?</p>
+        <p className="signin__notregyet">Ещё не зарегистрированы?</p>
         <TextButton
-          label={moveButtonText.signup}
+          label={moveButtonText.register}
           color="blue"
           fontSize="14"
           fontWeight="regular"
