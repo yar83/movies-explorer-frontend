@@ -14,6 +14,10 @@ export default function Register() {
     navigate('../');
   };
 
+  const moveToSignInPage = () => {
+    navigate('../signin');
+  };
+
   const buttonData = {
     view: 'blue-sign',
     label: actionButtonText.signup,
@@ -33,6 +37,7 @@ export default function Register() {
           color="blue"
           fontSize="14"
           fontWeight="regular"
+          handleClick={moveToSignInPage}
         />
       </div>
     </section>
