@@ -19,6 +19,10 @@ export default function SignIn() {
     navigate('../');
   };
 
+  const moveToSignUpPage = () => {
+    navigate('../signup');
+  };
+
   return (
     <section className="signin">
       <GreenSButton handleClick={moveToMainPage} />
@@ -33,6 +37,7 @@ export default function SignIn() {
           color="blue"
           fontSize="14"
           fontWeight="regular"
+          handleClick={moveToSignUpPage}
         />
       </div>
     </section>
