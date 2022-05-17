@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy": "npm run build && tar -C build . -cf - | ssh bfzu@eternalmovies.nomoredomains.work tar -xf - -C /home/bfzu/movies-frontend && echo 'Deployment is successfully completed'"
   },
   "eslintConfig": {
     "extends": [

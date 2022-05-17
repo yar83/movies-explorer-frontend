@@ -5,11 +5,11 @@ import MicroManButton from '../ui/buttons/compound/MicroMan/MicroManButton';
 import { moveButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
-export default function Navigation() {
+export default function Navigation({ isOpen, onClose }) {
   return (
-    <div className="navigation">
+    <div className={`navigation ${isOpen ? 'navigation_open' : ''}`}>
       <div className="navigation__container">
-        <div className="navigation__close-butt">
+        <div className="navigation__close-butt" onClick={onClose} >
           <IconButton view="close" glyph="white-cross" />
         </div>
         <div className="navigation__menu">

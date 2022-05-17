@@ -7,7 +7,7 @@ import IconButton from '../ui/buttons/icon/IconButton';
 import { moveButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
-export default function Header() {
+export default function Header({openNavigation}) {
   let navigate = useNavigate();
   const moveToSavedMoviesPage = () => {
     navigate('../saved-movies');
@@ -77,7 +77,7 @@ export default function Header() {
         </ul>
       </nav>
       <MicroManButton handleClick={moveToProfilePage} />
-      <IconButton glyph="burger" view="burger" />
+      <IconButton glyph="burger" view="burger" clickHandler={openNavigation} />
     </header>
   );
 };

@@ -10,6 +10,7 @@
   cursor: pointer;
   color: var(--white);
   font: normal 500 12px/1 'Inter', sans-serif;
+  transition: background .2s ease-in;
 }
 
 .ghost-button:hover {

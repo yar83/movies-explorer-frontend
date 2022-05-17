@@ -4,8 +4,7 @@ import GhostButton from '../ui/buttons/ghost/GhostButton';
 import { actionButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
-export default function MoviesSection() {
-  const [movies, setMovies] = useState([]);
+export default function MoviesSection({ movies }) {
 
   return (
     <section className="movies-section">
