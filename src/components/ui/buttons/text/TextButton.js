@@ -7,10 +7,16 @@ export default function TextButton(props) {
     color,
     fontSize,
     fontWeight,
+    underScored,
+    handleClick,
   } = props;
 
+  const clickHandler = () => {
+    handleClick(label);
+  };
+
   return (
-    <button className={`text-button text-button_color-${color} text-button_font-size-${fontSize} text-button_font-weight-${fontWeight}`}>
+    <button className={`text-button text-button_color-${color} text-button_font-size-${fontSize} text-button_font-weight-${fontWeight} ${underScored ? 'text-button_underscored' : ''}`} onClick={clickHandler}>
       {label}
     </button>
   );

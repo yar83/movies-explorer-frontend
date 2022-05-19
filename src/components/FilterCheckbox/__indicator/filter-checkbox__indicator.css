@@ -1,0 +1,11 @@
+.filter-checkbox__indicator {
+  display: flex;
+  width: 14px;
+  height: 14px;
+  border-radius: 8px;
+  background: var(--white);
+  align-self: center;
+  position: absolute;
+  left: 3px;
+  transition: transform .2s ease-in, width .2s ease-in, height .2s ease-in, left .2s ease-in;
+}

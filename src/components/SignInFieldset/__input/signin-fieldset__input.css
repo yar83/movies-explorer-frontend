@@ -1,0 +1,13 @@
+.signin-fieldset__input {
+  color: var(--white);
+  height: 46px;
+  border-radius: 8px;
+  background: var(--gray);
+  border: 0;
+  font: normal normal 13px/1 'Inter', sans-serif;
+  padding: 0 0 0 15px;
+}
+
+.signin-fieldset__input:focus {
+  outline: 1px solid var(--gray-text);
+}

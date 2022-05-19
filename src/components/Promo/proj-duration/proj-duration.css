@@ -1,0 +1,7 @@
+.proj-duration {
+  display: grid;
+  grid-template-columns: calc(14.95% + 57.53px) calc(100% - calc(14.95% + 57.53px));
+  grid-template-rows: 35px 35px; 
+  flex: 0 1 100%;
+  text-align: center;
+}

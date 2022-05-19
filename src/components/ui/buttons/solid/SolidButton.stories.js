@@ -26,3 +26,9 @@ BlueSignin.args = {
   view: 'blue-signin',
   label: actionButtonText.signin,
 };
+
+export const GraySave = Default.bind({});
+GraySave.args = {
+  view: 'gray-save',
+  label: actionButtonText.save,
+};

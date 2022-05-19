@@ -1,0 +1,9 @@
+.navigation__close-butt {
+  box-sizing: border-box;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 22px 0 0;
+}

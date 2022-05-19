@@ -1,0 +1,10 @@
+.proj-descr {
+  flex: 1 1 calc(50% - calc(3.91vw / 2));
+  min-width: 250px;
+  color: var(--white);
+  padding: 0 0 56px 0;
+}
+
+.proj-descr:last-child {
+  padding: 0 0 60px 0;
+}

@@ -1,0 +1,22 @@
+.student {
+  width: min(91.25vw, 292px);
+  margin: 0;
+  padding: 60px 0 70px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (min-width: 321px) {
+  .student {
+    width: min(89.97vw, 1140px);
+    padding: 66px 0 90px 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .student {
+    padding: 66px 0 125px 0;
+  }
+}

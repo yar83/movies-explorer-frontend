@@ -1,0 +1,12 @@
+.signin__header {
+  color: var(--white);
+  font: normal 500 24px/1 'Inter', sans-serif;
+  padding: 50px 0 80px 0;
+}
+
+@media (min-width: 321px) {
+  .signin__header {
+    padding: 40px 0;
+    align-self: flex-start;
+  }
+}

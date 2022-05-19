@@ -1,0 +1,8 @@
+@import url(./promo.css);
+@import url(./proj-descr/proj-descr.css);
+@import url(./proj-descr/__title/proje-descr__title.css);
+@import url(./proj-descr/__text/proj-descr__text.css);
+@import url(./proj-duration/proj-duration.css);
+@import url(./proj-duration/__one-week/proj-duration__one-week.css);
+@import url(./proj-duration/__four-week/proj-duration__four-week.css);
+@import url(./proj-duration/__stage/proj-duration__stage.css);

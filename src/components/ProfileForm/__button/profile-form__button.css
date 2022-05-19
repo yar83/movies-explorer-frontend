@@ -1,0 +1,7 @@
+.profile-form__button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}

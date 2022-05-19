@@ -1,0 +1,11 @@
+.filter-checkbox__checkbox {
+  display: none;
+}
+
+.filter-checkbox__checkbox:checked + .filter-checkbox__outline {
+  background: var(--green);
+}
+
+.filter-checkbox__checkbox:checked + .filter-checkbox__outline > .filter-checkbox__indicator {
+      transform: translateX(16px);
+    }

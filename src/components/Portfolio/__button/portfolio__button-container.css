@@ -1,0 +1,10 @@
+.portfolio__button-container {
+  height: 66px;
+  border-bottom: 2px solid var(--gray-text);
+  display: flex;
+  align-items: center;
+}
+
+.portfolio__button-container:last-child {
+  border: 0;
+}

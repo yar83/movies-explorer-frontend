@@ -1,0 +1,3 @@
+.signup-fieldset__input_correct {
+  outline: 1px solid var(--green);
+}

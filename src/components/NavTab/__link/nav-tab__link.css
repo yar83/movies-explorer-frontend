@@ -1,0 +1,25 @@
+.nav-tab__link {
+  position: relative;
+}
+
+.nav-tab__link:hover {
+  cursor: pointer;
+}
+
+.nav-tab__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -1px;
+  border-bottom: 1px solid var(--white);
+  transition: left ease-out .3s, right ease-out .3s;
+}
+
+.nav-tab__link:hover:after {
+  left: 50%;
+  right: 50%;
+}
+
+ 

@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: min(5.63vw, 18px) min(4.375vw, 14px) 0;
+  margin: 0;
+  width: min(100vw, 1280px);
+  box-sizing: border-box;
+}
+
+.header > .micro-man {
+  display: none;
+}
+
+@media (min-width: 321px) {
+  .header {
+    padding: min(5.63vw, 18px) min(3.91vw, 30px) 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .header {
+    padding: min(5.63vw, 18px) min(5.46vw, 70px) 0;
+  }
+
+  .header > .icon-button {
+    display: none;
+  }
+
+  .header > .micro-man {
+    display: flex;
+  }
+}

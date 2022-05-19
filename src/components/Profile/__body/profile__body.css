@@ -1,0 +1,18 @@
+.profile__body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 379px 0;
+}
+
+@media (min-width: 321px) {
+  .profile__body {
+    gap: 210px 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile__body {
+    gap: 220px 0;
+  }
+}

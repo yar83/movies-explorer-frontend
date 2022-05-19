@@ -6,8 +6,10 @@
   background: transparent;
   font: normal 10px/1 'Inter', sans-serif;
   cursor: pointer;
+  position: relative;
+  transition: color .2s ease-in;
 }
 
 .text-button:hover {
-  border-bottom: 1px dashed var(--gray-text);
+  color: var(--gray-text);
 }

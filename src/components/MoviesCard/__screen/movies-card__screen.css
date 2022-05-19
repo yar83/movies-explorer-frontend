@@ -1,0 +1,6 @@
+.movies-card__screen {
+  width: 100%;
+  padding: 56.25% 0 0 0;
+  box-sizing: border-box;
+  position: relative;
+}

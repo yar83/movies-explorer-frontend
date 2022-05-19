@@ -1,0 +1,9 @@
+.techno-stack {
+  width: min(calc(104.91vw - 157px), 648px);
+  margin: 0 auto;
+  display: flex;
+  gap: 10px 10px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}

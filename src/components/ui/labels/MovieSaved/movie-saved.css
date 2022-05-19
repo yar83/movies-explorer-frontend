@@ -1,0 +1,10 @@
+.movie-saved {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,8 +1,9 @@
-import Burger from './burger.svg';
-import Tick from './tick.svg';
-import Microman from './micro-man.svg';
-import Ssign from './s-sign.svg';
-import WhiteCross from './white-cross.svg';
+import { ReactComponent as Burger } from './burger.svg';
+import { ReactComponent as Tick } from './tick.svg';
+import { ReactComponent as Microman } from './micro-man.svg';
+import { ReactComponent as Ssign } from './s-sign.svg';
+import { ReactComponent as WhiteCross } from './white-cross.svg';
+import { ReactComponent as ArrowRightUp } from './arrow-right-up.svg';
 
 const Icons = {
   burger: Burger,
@@ -10,6 +11,7 @@ const Icons = {
   'micro-man': Microman,
   's-sign': Ssign,
   'white-cross': WhiteCross,
+  'arrow-right-up': ArrowRightUp,
 }
 
 export default Icons;

@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@svgr/webpack": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },
@@ -17,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy": "npm run build && tar -C build . -cf - | ssh bfzu@eternalmovies.nomoredomains.work tar -xf - -C /home/bfzu/movies-frontend && echo 'Deployment is successfully completed'"
   },
   "eslintConfig": {
     "extends": [
@@ -58,8 +61,12 @@
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
-    "@svgr/webpack": "^6.2.1",
     "chromatic": "^6.5.3",
+    "msw": "^0.39.2",
+    "msw-storybook-addon": "^1.6.3",
     "webpack": "^5.70.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

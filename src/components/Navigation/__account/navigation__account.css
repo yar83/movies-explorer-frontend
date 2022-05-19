@@ -1,0 +1,14 @@
+.navigation__account {
+  height: 78px; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+;
+}
+
+@media (min-width: 321px) {
+  .navigation__account {
+    height: 98px;
+  }
+}

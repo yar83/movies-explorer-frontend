@@ -1,0 +1,13 @@
+.text-button_underscored::after {
+  content: '';
+  width: 100%;
+  /* Отступ нижнего подчёркивания от текста рассчитывается
+   * линейным уравнением. Изменяемая величина: размер шрифта,
+   * нехитрой школьной формулой получаем линейную зависимость.
+   */
+  height: calc(2.14 * 1em - 12.58px);
+  border-bottom: 0.16em solid var(--white);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}

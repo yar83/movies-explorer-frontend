@@ -1,0 +1,13 @@
+.nav-tab__list {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  color: var(--white);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 min(7.5vw, 40px);
+  font: normal 500 min(3.44vw, 13px)/16px 'Inter', sans-serif;
+}

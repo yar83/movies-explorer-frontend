@@ -1,0 +1,6 @@
+.profile__buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 16px 0;
+}

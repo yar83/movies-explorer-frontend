@@ -1,0 +1,22 @@
+.search-form {
+  box-sizing: border-box;
+  padding: 70px min(4.375vw, 14px) 0 min(4.375vw, 14px);
+  margin: 0;
+  width: min(100vw, 1280px);
+  display: flex;
+  flex-flow: row wrap;
+  gap: 31px 0;
+}
+
+@media (min-width: 321px) {
+  .search-form {
+    padding: 70px min(3.91vw, 30px) 0 min(3.91vw, 30px);
+    gap: 27px 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .search-form {
+    padding: 70px min(5.46vw, 70px) 0 min(5.46vw, 70px);
+  }
+}

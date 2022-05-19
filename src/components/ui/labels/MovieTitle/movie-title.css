@@ -1,0 +1,6 @@
+.movie-title {
+  color: var(--white);
+  font: normal 500 12px/18px 'Inter', sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

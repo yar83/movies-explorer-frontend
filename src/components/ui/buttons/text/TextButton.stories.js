@@ -17,12 +17,16 @@ export default {
       control: { type: 'select' },
     },
     fontSize: {
-      options: ['10', '12', '14', '18'],
+      options: ['10', '11', '12', '14', '18'],
       control: { type: 'select' },
     },
     fontWeight: {
       options: ['regular', 'medium'],
       control: {type: 'select' },
+    },
+    underScored: {
+      options: [true, false],
+      control: {type: 'radio'},
     },
   },
 };
@@ -33,4 +37,5 @@ Default.args = {
   label: moveButtonText.back,
   color: 'red',
   fontSize: '14',
+  underScored: false,
 };

@@ -1,0 +1,8 @@
+.solid-button_gray-save {
+  background: var(--gray);
+  width: 72px;
+  height: 21px;
+  border-radius: 11px;
+  color: var(--white);
+  font: normal 10px/1 'Inter', sans-serif;
+}

@@ -1,2 +1,4 @@
 @import url(./vendor/normalize.css);
 @import url(./shared/styles/fonts.css);
+@import url(./shared/styles/palette.css);
+@import url(./shared/styles/global.css);

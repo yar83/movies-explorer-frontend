@@ -6,3 +6,10 @@
   font: 500 14px/1.2 'Inter', sans-serif;
   color: var(--white);
 }
+
+@media (min-width: 321px) {
+  .solid-button_blue-search {
+    width: 100px;
+    height: 52px;
+  }
+}

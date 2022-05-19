@@ -1,0 +1,18 @@
+.movies-card {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: min(5vw, 16px) 0;
+}
+
+@media (min-width: 321px) {
+  .movies-card {
+    gap: min(3.26, 25px);
+  }
+}
+
+@media (min-width: 769px) {
+  .movies-card {
+    gap: min(1.1vw, 14px);
+  }
+}
