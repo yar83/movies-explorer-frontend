@@ -7,6 +7,8 @@ import SignUpFieldset from '../../SignUpFieldset/SignUpFieldset';
 import { actionButtonText, moveButtonText } from '../../../shared/constants/buttons/button-text';
 import './index.css'
 
+import { formValidationErrorMessages } from '../../../shared/constants/errors/errors';
+
 export default function Register() {
   let navigate = useNavigate();
 
@@ -23,12 +25,18 @@ export default function Register() {
     label: actionButtonText.signup,
   };
 
+  const errors = {
+    name: formValidationErrorMessages.notAllowedSymbols,
+    email: formValidationErrorMessages.notValidEmail,
+    password: formValidationErrorMessages.tooShortPassword,
+  };
+
   return (
     <section className="register">
       <GreenSButton handleClick={moveToMainPage} />
       <h1 className="register__header">Добро пожаловать!</h1>
       <SignForm buttonData={buttonData} formPurpose="signup">
-        <SignUpFieldset />
+        <SignUpFieldset errors={errors}/>
       </SignForm>
       <div className="register__footer">
         <p className="register__regyet">Уже зарегистрированы?</p>
