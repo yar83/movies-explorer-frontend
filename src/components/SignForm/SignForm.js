@@ -9,7 +9,7 @@ export default function SignForm(props) {
     <form className="sign-form" name={formPurpose} noValidate>
       { props.children }
       <fieldset className="sign-form__button">
-        <SolidButton view={buttonData.view} label={buttonData.label} />
+        <SolidButton view={buttonData.view} label={buttonData.label} isDisabled={true} />
       </fieldset>
     </form>
   );

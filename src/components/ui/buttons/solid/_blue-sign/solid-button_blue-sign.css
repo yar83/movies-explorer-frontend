@@ -7,4 +7,7 @@
   color: var(--white);
 }
 
-
+.solid-button_blue-sign:disabled {
+  background: var(--gray);
+  color: var(--gray-text);
+}
