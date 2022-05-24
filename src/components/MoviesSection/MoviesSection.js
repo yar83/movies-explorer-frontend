@@ -4,7 +4,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import GhostButton from '../ui/buttons/ghost/GhostButton'; 
 import { actionButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
-import moviesExplorer from '../../utils/MoviesApi';
+import moviesExplorer from '../../utils/api/MoviesApi';
 
 export default function MoviesSection() {
   const [movies, setMovies] = useState([]);
