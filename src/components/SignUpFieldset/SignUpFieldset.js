@@ -16,7 +16,7 @@ export default function SignUpFieldset({errors}) {
       </p>
       <p className="signup-fieldset__item">
         <label className="signup-fieldset__label" htmlFor="password">Пароль</label>
-        <input type="password" className="signup-fieldset__input" name="name" id="password" required placeholder="••••••"></input>
+        <input type="password" className="signup-fieldset__input" name="password" id="password" required placeholder="••••••"></input>
         <span className="signup-fieldset__error">{errors.password}</span>
       </p>
       <p className="signup-fieldset__general-error">
