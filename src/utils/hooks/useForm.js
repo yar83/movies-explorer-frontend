@@ -45,7 +45,7 @@ function useForm(stateSchema, cb) {
       signUpFormValidationSchema[name].validator !== null &&
       typeof signUpFormValidationSchema[name].validator === 'object'
     ) {
-      if (value && !signUpFormValidationSchema[name].validator.regExp.text(value)) {
+      if (value && !signUpFormValidationSchema[name].validator.regExp.test(value)) {
         error = signUpFormValidationSchema[name].validator.error;
       }
     }
