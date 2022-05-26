@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { signUpFormValidationSchema } from '../validation/formValidationSchema';
 
-function useForm(stateSchema, cb) {
+export function useForm(stateSchema, signUpFormValidationSchema, cb) {
   const [state, setState] = useState(stateSchema);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [isClear, setIsClear] = useState(true);
@@ -30,7 +29,7 @@ function useForm(stateSchema, cb) {
 
   const handleChange = useCallback((event) => {
     setIsClear(false);
-
+    
     const name = event.target.name;
     const value = event.target.value;
     
@@ -45,8 +44,9 @@ function useForm(stateSchema, cb) {
       signUpFormValidationSchema[name].validator !== null &&
       typeof signUpFormValidationSchema[name].validator === 'object'
     ) {
-      if (value && !signUpFormValidationSchema[name].validator.regExp.text(value)) {
+      if (value && !signUpFormValidationSchema[name].validator.regExp.test(value)) {
         error = signUpFormValidationSchema[name].validator.error;
+        console.log(error);
       }
     }
 
@@ -63,5 +63,3 @@ function useForm(stateSchema, cb) {
 
   return { state, buttonDisabled, handleChange, handleSubmit };
 }
-
-export default useForm;
