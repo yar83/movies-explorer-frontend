@@ -1,4 +1,4 @@
-import { endpoint } from './const/moviesApi';
+import { endpoint } from '../const/moviesApi';
 
 class MoviesExplorer {
   #endpoint;
