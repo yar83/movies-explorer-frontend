@@ -33,7 +33,7 @@ export default function Register() {
       <GreenSButton handleClick={moveToMainPage} />
       <h1 className="register__header">Добро пожаловать!</h1>
       <SignForm buttonData={buttonData} buttonDisabled={buttonDisabled} formPurpose="signup" onSubmit={handleSubmit}>
-        <SignUpFieldset handleChange={handleChange}state={state}/>
+        <SignUpFieldset handleChange={handleChange} state={state}/>
       </SignForm>
       <div className="register__footer">
         <p className="register__regyet">Уже зарегистрированы?</p>

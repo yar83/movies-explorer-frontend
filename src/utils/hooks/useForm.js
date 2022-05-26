@@ -3,9 +3,8 @@ import { useState, useEffect, useCallback } from 'react';
 export function useForm(stateSchema, signUpFormValidationSchema, cb) {
   const [state, setState] = useState(stateSchema);
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [isClear, setIsClear] = useState(true);
 
-  const validateFormState = useCallback(() => {
+  const validateFormState = () => {
     const hasErrors = Object.keys(signUpFormValidationSchema).some((key) => {
       const isInputRequired = signUpFormValidationSchema[key].required;
       const stateValue = state[key].value;
@@ -15,23 +14,17 @@ export function useForm(stateSchema, signUpFormValidationSchema, cb) {
     });
 
     return hasErrors;
-  }, [state]);
+  };
 
   useEffect(() => {
     setButtonDisabled(true);
   }, []);
 
-  useEffect(() => {
-    if (!isClear) {
-      setButtonDisabled(validateFormState());
-    }
-  }, [state, isClear, validateFormState]);
-
-  const handleChange = useCallback((event) => {
-    setIsClear(false);
+  const handleChange = (event) => {
     
     const name = event.target.name;
     const value = event.target.value;
+    const isClear = false;
     
     let error = '';
     if (signUpFormValidationSchema[name].required) {
@@ -46,12 +39,12 @@ export function useForm(stateSchema, signUpFormValidationSchema, cb) {
     ) {
       if (value && !signUpFormValidationSchema[name].validator.regExp.test(value)) {
         error = signUpFormValidationSchema[name].validator.error;
-        console.log(error);
       }
     }
 
-    setState((prevState) => ({...prevState, [name]: { value, error },}));
-  }, [] );
+    setState((state) => ({...state, [name]: { value, error, isClear },}));
+    console.log(state);
+  };
   
   const handleSubmit = (event) => {
     event.preventDefault();

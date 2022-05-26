@@ -1,3 +1,7 @@
 .signup-fieldset__input_correct {
   outline: 1px solid var(--green);
 }
+
+.signup-fieldset__input_correct:focus {
+  outline: 1px solid var(--green);
+}
