@@ -2,7 +2,6 @@ import React from 'react';
 import './index.css';
 
 export default function SignUpFieldset({handleChange, state}) {
-  console.log(state);
   return (
     <fieldset className="signup-fieldset">
       <p className="signup-fieldset__item">
