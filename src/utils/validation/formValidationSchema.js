@@ -9,7 +9,7 @@ export const signUpFormValidationSchema = {
   email: {
     required: true,
     validator: {
-      regExp: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
+      regExp: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
       error: 'Недопустимый адрес электронной почты',
     },
   },
@@ -20,4 +20,9 @@ export const signUpFormValidationSchema = {
       error: 'Минимум шесть символов',
     },
   },
+};
+
+export const signInFormValidationSchema = {
+  email: signUpFormValidationSchema.email,
+  password: signUpFormValidationSchema.password,
 };
