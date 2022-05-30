@@ -15,3 +15,8 @@ export const signUpFormSchema = {
     isClear: true,
   },
 }
+
+export const signInFormSchema= {
+  email: signUpFormSchema.email,
+  password: signUpFormSchema.password,
+};

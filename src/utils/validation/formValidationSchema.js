@@ -21,3 +21,8 @@ export const signUpFormValidationSchema = {
     },
   },
 };
+
+export const signInFormValidationSchema = {
+  email: signUpFormValidationSchema.email,
+  password: signUpFormValidationSchema.password,
+};
