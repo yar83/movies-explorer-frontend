@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export function useForm(stateSchema, signUpFormValidationSchema, cb) {
+export function useForm(stateSchema, validationSchema, cb) {
   const [state, setState] = useState(stateSchema);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const validateFormState = () => {
-    const hasErrors = Object.keys(signUpFormValidationSchema).some((key) => {
-      const isInputRequired = signUpFormValidationSchema[key].required;
+    const hasErrors = Object.keys(validationSchema).some((key) => {
+      const isInputRequired = validationSchema[key].required;
       const stateValue = state[key].value;
       const stateError = state[key].error;
 
@@ -27,18 +27,18 @@ export function useForm(stateSchema, signUpFormValidationSchema, cb) {
     const isClear = false;
     
     let error = '';
-    if (signUpFormValidationSchema[name].required) {
+    if (validationSchema[name].required) {
       if (!value) {
         error = 'Это обязательное поле';
       }
     }
 
     if (
-      signUpFormValidationSchema[name].validator !== null &&
-      typeof signUpFormValidationSchema[name].validator === 'object'
+      validationSchema[name].validator !== null &&
+      typeof validationSchema[name].validator === 'object'
     ) {
-      if (value && !signUpFormValidationSchema[name].validator.regExp.test(value)) {
-        error = signUpFormValidationSchema[name].validator.error;
+      if (value && !validationSchema[name].validator.regExp.test(value)) {
+        error = validationSchema[name].validator.error;
       }
     }
 

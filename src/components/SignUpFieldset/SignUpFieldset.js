@@ -2,7 +2,6 @@ import React from 'react';
 import './index.css';
 
 export default function SignUpFieldset({handleChange, state}) {
-  console.log(state);
   return (
     <fieldset className="signup-fieldset">
       <p className="signup-fieldset__item">
@@ -21,7 +20,6 @@ export default function SignUpFieldset({handleChange, state}) {
         <span className="signup-fieldset__error">{state.password.error}</span>
       </p>
       <p className="signup-fieldset__general-error">
-        Что-то пошло не так...
       </p>
     </fieldset>
   );
