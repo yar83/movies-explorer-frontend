@@ -43,7 +43,7 @@ export function useForm(stateSchema, validationSchema, cb) {
     }
 
     setState((state) => ({...state, [name]: { value, error, isClear },}));
-    console.log(state);
+    setButtonDisabled(validateFormState);
   };
   
   const handleSubmit = (event) => {
