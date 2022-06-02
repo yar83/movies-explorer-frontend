@@ -12,13 +12,16 @@ export function useForm(stateSchema, validationSchema, cb) {
 
       return (isInputRequired && !stateValue) || stateError;
     });
-
     return hasErrors;
   };
 
   useEffect(() => {
     setButtonDisabled(true);
   }, []);
+
+  useEffect(() => {
+    setButtonDisabled(validateFormState());
+  }, [state]);
 
   const handleChange = (event) => {
     
@@ -43,7 +46,6 @@ export function useForm(stateSchema, validationSchema, cb) {
     }
 
     setState((state) => ({...state, [name]: { value, error, isClear },}));
-    setButtonDisabled(validateFormState);
   };
   
   const handleSubmit = (event) => {

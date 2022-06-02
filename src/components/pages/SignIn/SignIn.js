@@ -32,7 +32,7 @@ export default function SignIn() {
     <section className="signin">
       <GreenSButton handleClick={moveToMainPage} />
       <h1 className="signin__header">Добро пожаловать!</h1>
-      <SignForm buttonData={buttonData} buttonDisabled={buttonDisabled} formPurpose="signin" onSubmit={handleSubmit}>
+      <SignForm buttonData={buttonData} buttonDisabled={buttonDisabled} formPurpose="signin" handleSubmit={handleSubmit}>
         <SignInFieldset handleChange={handleChange} state={state}/>
       </SignForm>
       <div className="signin__footer">

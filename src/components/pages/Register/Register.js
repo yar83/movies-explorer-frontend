@@ -13,7 +13,7 @@ import { signUpFormValidationSchema } from '../../../utils/validation/formValida
 export default function Register() {
   let navigate = useNavigate();
 
-  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(signUpFormSchema, signUpFormValidationSchema, () => console.log(state));
+  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(signUpFormSchema, signUpFormValidationSchema, (state) => console.log(state));
 
   const moveToMainPage = () => {
     navigate('../');
@@ -32,7 +32,7 @@ export default function Register() {
     <section className="register">
       <GreenSButton handleClick={moveToMainPage} />
       <h1 className="register__header">Добро пожаловать!</h1>
-      <SignForm buttonData={buttonData} buttonDisabled={buttonDisabled} formPurpose="signup" onSubmit={handleSubmit}>
+      <SignForm buttonData={buttonData} buttonDisabled={buttonDisabled} formPurpose="signup" handleSubmit={handleSubmit}>
         <SignUpFieldset handleChange={handleChange} state={state}/>
       </SignForm>
       <div className="register__footer">

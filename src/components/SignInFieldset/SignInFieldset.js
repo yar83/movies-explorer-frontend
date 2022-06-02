@@ -6,7 +6,7 @@ export default function SignInFieldset({handleChange, state}) {
     <fieldset className="signin-fieldset">
       <p className="signin-fieldset__item">
         <label className="signup-fieldset__label" htmlFor="email">E-mail</label>
-        <input className={`signin-fieldset__input ${state.email.isClear ? '' : state.email.error ? 'signin-fieldset__input_error' : 'signin-fieldset__input_correct'}`} type="email" id="email" name="email" placeholder="Иван" value={state.email.value || ''} onChange={handleChange} required></input>
+        <input className={`signin-fieldset__input ${state.email.isClear ? '' : state.email.error ? 'signin-fieldset__input_error' : 'signin-fieldset__input_correct'}`} type="email" id="email" name="email" placeholder="mail@yandex.ru" value={state.email.value || ''} onChange={handleChange} required></input>
         <span className="signin-fieldset__error">{state.email.error}</span>
       </p>
       <p className="signin-fieldset__item">
