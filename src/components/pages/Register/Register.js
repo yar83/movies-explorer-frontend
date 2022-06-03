@@ -9,11 +9,25 @@ import { actionButtonText, moveButtonText } from '../../../shared/constants/butt
 import './index.css'
 import { signUpFormSchema } from '../../../utils/validation/formSchema';
 import { signUpFormValidationSchema } from '../../../utils/validation/formValidationSchema';
+import mainApi from '../../../utils/api/MainApi';
 
 export default function Register() {
   let navigate = useNavigate();
 
-  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(signUpFormSchema, signUpFormValidationSchema, (state) => console.log(state));
+  function signUpCB(state) {
+    mainApi.signup(...Object.keys(state).map((el) => state[el].value)) 
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((res) => {
+        console.log(res);
+      })
+      .finally(() => {
+        console.log('finally');
+      });
+  };
+
+  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(signUpFormSchema, signUpFormValidationSchema, signUpCB);
 
   const moveToMainPage = () => {
     navigate('../');
