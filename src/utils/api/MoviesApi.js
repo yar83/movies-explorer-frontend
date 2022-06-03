@@ -8,10 +8,12 @@ class MoviesExplorer {
   }
   
   getMovies() {
-    return fetch(this.#endpoint,
-    {
-      method: 'GET',
-    })
+    return fetch(
+      this.#endpoint,
+      {
+        method: 'GET',
+      }
+    )
     .then(res => res.json())
     .catch((err) => console.log(err));
   }

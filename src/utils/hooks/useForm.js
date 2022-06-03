@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 export function useForm(stateSchema, validationSchema, cb) {
   const [state, setState] = useState(stateSchema);
