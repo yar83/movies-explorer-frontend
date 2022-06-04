@@ -8,6 +8,7 @@ import SignInFieldset from '../../SignInFieldset/SignInFieldset';
 import { actionButtonText, moveButtonText } from '../../../shared/constants/buttons/button-text';
 import { signInFormValidationSchema } from '../../../utils/validation/formValidationSchema';
 import { signInFormSchema } from '../../../utils/validation/formSchema';
+import mainApi from '../../../utils/api/MainApi';
 import './index.css'
 
 export default function SignIn() {
@@ -16,7 +17,20 @@ export default function SignIn() {
     label: actionButtonText.signin,
   };
 
-  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(signInFormSchema, signInFormValidationSchema, () => console.log(state));
+  function signInCB(state) {
+    mainApi.signin(...Object.keys(state).map((el) => state[el].value)) 
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((res) => {
+        console.log(res);
+      })
+      .finally(() => {
+        console.log('finally');
+      });
+  };
+
+  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(signInFormSchema, signInFormValidationSchema, signInCB);
 
   let navigate = useNavigate();
 

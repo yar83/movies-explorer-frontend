@@ -30,6 +30,22 @@ class MainApi {
     )
       .then(this.#checkResp);
   }
+
+  signin(email, password) {
+    return fetch(
+      `${this.#base}${this.#ends.signin}`,
+      {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      },
+    )
+      .then(this.#checkResp);
+  }
 }
 
 export default new MainApi(baseUrl, endpoints);
