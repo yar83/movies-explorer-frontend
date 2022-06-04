@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../../utils/hooks/useForm';
 import GreenSButton from '../../ui/buttons/compound/GreenS/GreenSButton';
@@ -9,15 +9,22 @@ import { actionButtonText, moveButtonText } from '../../../shared/constants/butt
 import './index.css'
 import { signUpFormSchema } from '../../../utils/validation/formSchema';
 import { signUpFormValidationSchema } from '../../../utils/validation/formValidationSchema';
+import { UserAuthContext } from '../../../contexts/UserAuthContext';
 import mainApi from '../../../utils/api/MainApi';
 
 export default function Register() {
   let navigate = useNavigate();
 
-  function signUpCB(state) {
+  const currentUser = useContext(UserAuthContext);
+
+  const signUpCB = (state) => {
     mainApi.signup(...Object.keys(state).map((el) => state[el].value)) 
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        currentUser.signin(
+          state.email.value,
+          state.password.value,
+          () => navigate('/movies', { replace: true })
+        )
       })
       .catch((res) => {
         console.log(res);

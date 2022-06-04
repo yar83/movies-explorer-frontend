@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-export default function SignInFieldset({handleChange, state}) {
+export default function SignInFieldset({ handleChange, state, genErrMessage }) {
   return (
     <fieldset className="signin-fieldset">
       <p className="signin-fieldset__item">
@@ -15,6 +15,7 @@ export default function SignInFieldset({handleChange, state}) {
         <span className="signin-fieldset__error">{state.password.error}</span>        
       </p>
       <p className="signin-fieldset__general-error">
+        {genErrMessage}
       </p>
     </fieldset>
   );

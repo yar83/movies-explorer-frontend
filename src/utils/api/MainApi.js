@@ -10,8 +10,10 @@ class MainApi {
   }
 
   #checkResp(resp) {
+    let ret;
     if (resp.ok) {
-      return resp.json();
+      ret = resp.json(); 
+      return ret;
     }
     return Promise.reject(resp);
   };
@@ -44,7 +46,31 @@ class MainApi {
         body: JSON.stringify({ email, password }),
       },
     )
-      .then(this.#checkResp);
+      .then((resp) => resp.ok ? {} : Promise.reject(resp.json()));
+  }
+
+  signout() {
+    return fetch(
+      `${this.#base}${this.#ends.signout}`,
+      {
+        method: 'POST',
+        credentials: 'include',
+      }
+    )
+      .then((resp) => resp)
+      .catch((err) => console.log(err));
+  }
+
+  getUserData() {
+    return fetch(
+      `${this.#base}${this.#ends.me}`,
+      {
+        method: 'GET',
+        credentials: 'include',
+      }
+    )
+      .then(this.#checkResp)
+      .catch((err) => console.log(err));
   }
 }
 
