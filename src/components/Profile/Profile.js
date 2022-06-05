@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfileData from '../ProfileData/ProfileData';
 import ProfileForm from '../ProfileForm/ProfileForm';
@@ -12,17 +12,27 @@ export default function Profile() {
   const navigate = useNavigate();
   const signOutHandler = () => currentUser.signout(() => navigate('/', { replace: true }));
 
+  const [isNormalProfileState, setIsNormalProfileState] = useState(true);
+
+  const editButtonClickHandler = () => {
+    setIsNormalProfileState(isNormalProfileState => !isNormalProfileState);
+  };
+
   return (
     <section className="profile">
       <h1 className="profile__header">{`Привет, ${currentUser.userData.name}!`}</h1>
       <div className="profile__body">
-        <ProfileData userData={currentUser.userData} />
+        {isNormalProfileState
+          ? <ProfileData userData={currentUser.userData} />
+          : <ProfileForm />
+        }
         <div className="profile__buttons">
           <TextButton
-            label={actionButtonText.edit}
+            label={isNormalProfileState ? actionButtonText.edit : actionButtonText.cancel}
             color="white"
             fontSize="12"
             fontWeight="regular"
+            handleClick={editButtonClickHandler}
           />
           <TextButton
             label={actionButtonText.signout}
