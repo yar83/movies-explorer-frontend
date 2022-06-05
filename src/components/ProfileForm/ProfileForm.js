@@ -6,7 +6,7 @@ import './index.css';
 
 export default function ProfileForm() {
   return (
-    <form className="profile-form" novalidate>
+    <form className="profile-form" noValidate>
       <ProfileFieldset />
       <fieldset className="profile-form__button">
         <TextButton
