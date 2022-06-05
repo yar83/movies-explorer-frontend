@@ -13,7 +13,6 @@ export default function UserAuthProvider ({ children }) {
       .then(() => {
         return mainApi.getUserData()
           .then((user) => {
-            console.log('user_auth', user);
             setUserData(user);
             cb();
           });
