@@ -23,6 +23,10 @@ export function useForm(stateSchema, validationSchema, cb) {
     setButtonDisabled(validateFormState());
   }, [state]);
 
+  const resetForm = () => {
+    setState(stateSchema);
+  }
+
   const handleChange = (event) => {
     
     const name = event.target.name;
@@ -56,5 +60,5 @@ export function useForm(stateSchema, validationSchema, cb) {
     }
   };
 
-  return { state, buttonDisabled, handleChange, handleSubmit };
+  return { state, buttonDisabled, handleChange, handleSubmit, resetForm };
 }

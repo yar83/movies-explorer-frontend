@@ -16,7 +16,12 @@ export const signUpFormSchema = {
   },
 }
 
-export const signInFormSchema= {
+export const signInFormSchema = {
   email: signUpFormSchema.email,
   password: signUpFormSchema.password,
+};
+
+export const editProfileFormSchema = {
+  name: signUpFormSchema.name,
+  email: signUpFormSchema.email,
 };

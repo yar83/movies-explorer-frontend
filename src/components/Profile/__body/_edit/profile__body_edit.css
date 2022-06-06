@@ -1,0 +1,15 @@
+.profile__body_edit {
+  gap: calc(379px - 21px) 0;
+}
+
+@media (min-width: 321px) {
+  .profile__body_edit {
+    gap: calc(210px - 21px) 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile__body_edit {
+    gap: calc(220px - 21px) 0;
+  }
+}

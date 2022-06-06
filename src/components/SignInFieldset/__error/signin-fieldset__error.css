@@ -1,6 +1,6 @@
 .signin-fieldset__error {
-  height: 8px;
-  margin: 3px 0 0 0;
+  height: 4px;
+  margin: 0 0 0 0;
   padding: 0 0 0 15px;
   color: var(--red);
   font: normal normal 8px/1 'Inter', sans-serif;

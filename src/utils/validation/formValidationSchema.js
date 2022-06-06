@@ -26,3 +26,9 @@ export const signInFormValidationSchema = {
   email: signUpFormValidationSchema.email,
   password: signUpFormValidationSchema.password,
 };
+
+export const editProfileFormValidationSchema = {
+  name: signUpFormValidationSchema.name,
+  email: signUpFormValidationSchema.email,
+};
+
