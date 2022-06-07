@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserAuthContext } from '../../contexts/UserAuthContext';
 import mainApi from '../../utils/api/MainApi'; 
@@ -27,6 +27,15 @@ export default function UserAuthProvider ({ children }) {
         cb();
       });
   };
+
+  useEffect(() => {
+    mainApi.getUserData()
+      .then((user) => {
+        setUserData(user);
+        console.log(user);
+        navigate('/', { replace: true });
+      });
+  }, []);
 
   const value = { userData, signin, signout };
 
