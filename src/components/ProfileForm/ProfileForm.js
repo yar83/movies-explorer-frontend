@@ -16,6 +16,7 @@ export default function ProfileForm(props) {
           color="white"
           fontSize="13"
           fontWeight="regular"
+          isDisabled={buttonDisabled}
         />
       </fieldset>
     </form>
