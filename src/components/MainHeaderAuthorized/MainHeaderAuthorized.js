@@ -34,7 +34,7 @@ export default function MainHeaderAuthorized() {
             </li>
           </ul>
         </nav>
-        <MicroManButton />
+        <MicroManButton isOnMain={true} />
         <IconButton glyph="burger" view="burger" />
       </div>
     </header>
