@@ -17,10 +17,6 @@ export default function Header({openNavigation}) {
     navigate('../movies');
   };
 
-  const moveToProfilePage = () => {
-    navigate('../profile');
-  };
-
   const moveToMainPage = () => {
     navigate('../');
   };
@@ -76,7 +72,7 @@ export default function Header({openNavigation}) {
           </li>
         </ul>
       </nav>
-      <MicroManButton handleClick={moveToProfilePage} />
+      <MicroManButton />
       <IconButton glyph="burger" view="burger" clickHandler={openNavigation} />
     </header>
   );

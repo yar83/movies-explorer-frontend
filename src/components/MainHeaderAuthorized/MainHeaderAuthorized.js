@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import GreenS from '../ui/labels/GreenS/GreenS';
 import TextButton from '../ui/buttons/text/TextButton';
 import MicroManButton from '../ui/buttons/compound/MicroMan/MicroManButton';
@@ -8,11 +7,6 @@ import { moveButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
 export default function MainHeaderAuthorized({ burgerBtnClickHandler }) {
-  const navigate = useNavigate();
-
-  const accountBtnClickHandler = () => {
-    navigate('/profile', { replace: true });
-  };
 
   return (
     <header className="main-header-authorized-wrapper">
@@ -40,7 +34,7 @@ export default function MainHeaderAuthorized({ burgerBtnClickHandler }) {
             </li>
           </ul>
         </nav>
-        <MicroManButton isOnMain={true} handleClick={accountBtnClickHandler} />
+        <MicroManButton isOnMain={true} />
         <IconButton glyph="burger" view="burger" clickHandler={burgerBtnClickHandler}/>
       </div>
     </header>
