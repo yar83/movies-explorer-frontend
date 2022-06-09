@@ -7,7 +7,7 @@ import IconButton from '../ui/buttons/icon/IconButton';
 import { moveButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
-export default function MainHeaderAuthorized() {
+export default function MainHeaderAuthorized({ burgerBtnClickHandler }) {
   const navigate = useNavigate();
 
   const accountBtnClickHandler = () => {
@@ -41,7 +41,7 @@ export default function MainHeaderAuthorized() {
           </ul>
         </nav>
         <MicroManButton isOnMain={true} handleClick={accountBtnClickHandler} />
-        <IconButton glyph="burger" view="burger" />
+        <IconButton glyph="burger" view="burger" clickHandler={burgerBtnClickHandler}/>
       </div>
     </header>
   );
