@@ -7,7 +7,7 @@ import { actionButtonText } from '../../shared/constants/buttons/button-text';
 import { UserAuthContext} from '../../contexts/UserAuthContext';
 import './index.css';
 
-export default function Profile(props) {
+export default function Profile() {
   const currentUser = useContext(UserAuthContext);
   const navigate = useNavigate();
   const signOutHandler = () => currentUser.signout(() => navigate('/', { replace: true }));
@@ -16,7 +16,6 @@ export default function Profile(props) {
 
   const editButtonClickHandler = () => {
     setIsNormalProfileState(isNormalProfileState => !isNormalProfileState);
-    props.resetForm();
   };
 
   return (
@@ -25,7 +24,10 @@ export default function Profile(props) {
       <div className={`profile__body ${isNormalProfileState ? '' : 'profile__body_edit'}`}>
         {isNormalProfileState
           ? <ProfileData userData={currentUser.userData} />
-          : <ProfileForm {...props} />
+          : <ProfileForm
+              saveBtnClickHandler={editButtonClickHandler}
+              updateUserData={currentUser.updateUserData}
+          />
         }
         <div className="profile__buttons">
           <TextButton

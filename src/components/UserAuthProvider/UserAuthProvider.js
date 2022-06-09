@@ -28,16 +28,16 @@ export default function UserAuthProvider ({ children }) {
       });
   };
 
+  const updateUserData = (newUserData) => setUserData(newUserData);
+
   useEffect(() => {
     mainApi.getUserData()
       .then((user) => {
         setUserData(user);
-        console.log(user);
-        navigate('/', { replace: true });
       });
   }, []);
 
-  const value = { userData, signin, signout };
+  const value = { userData, signin, signout, updateUserData };
 
   return <UserAuthContext.Provider value={value}>{children}</UserAuthContext.Provider>;
 }

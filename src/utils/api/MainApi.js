@@ -10,10 +10,8 @@ class MainApi {
   }
 
   #checkResp(resp) {
-    let ret;
     if (resp.ok) {
-      ret = resp.json(); 
-      return ret;
+      return resp.json();
     }
     return Promise.reject(resp);
   };
@@ -71,6 +69,22 @@ class MainApi {
     )
       .then(this.#checkResp)
       .catch((err) => console.log(err));
+  }
+
+  updateUserData(name, email) {
+    return fetch(
+      `${this.#base}${this.#ends.me}`,
+      {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email }),
+      },
+    )
+      .then(this.#checkResp);
   }
 }
 
