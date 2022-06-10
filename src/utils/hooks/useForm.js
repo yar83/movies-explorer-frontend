@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function useForm(stateSchema, validationSchema, cb) {
+export function useForm(stateSchema, validationSchema, cb, customFormValidatonSchema = null) {
   const [state, setState] = useState(stateSchema);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -46,6 +46,12 @@ export function useForm(stateSchema, validationSchema, cb) {
     ) {
       if (value && !validationSchema[name].validator.regExp.test(value)) {
         error = validationSchema[name].validator.error;
+      }
+    }
+
+    if (customFormValidatonSchema) {
+      if (value && !customFormValidatonSchema[name].validator.regExp.test(value)) {
+        error = customFormValidatonSchema[name].validator.error;
       }
     }
 

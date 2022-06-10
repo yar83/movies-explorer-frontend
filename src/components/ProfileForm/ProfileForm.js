@@ -8,7 +8,30 @@ import { editProfileFormValidationSchema } from '../../utils/validation/formVali
 import mainApi from '../../utils/api/MainApi';
 import './index.css';
 
-export default function ProfileForm({ saveBtnClickHandler, updateUserData } ) {
+export default function ProfileForm(props) {
+  const {
+    saveBtnClickHandler,
+    updateUserData,
+    userData,
+  } = props;
+
+  const customFormValidatonSchema = {
+    name: {
+      required: true,
+      validator: {
+        regExp: new RegExp(`(^(?!${userData.name}).*$)|(^.*(?<!${userData.name})$)`),
+        error: 'Ничего не поменялось',
+      },
+    },
+    email: {
+      required: true,
+      validator: {
+        regExp: new RegExp(`(^(?!${userData.email}).*$)|(^.*(?<!${userData.email})$)`),
+        error: 'Ничего не поменялось',
+      },
+    },
+  };
+
   const { state, buttonDisabled, handleChange, handleSubmit, resetForm } = useForm(
     editProfileFormSchema,
     editProfileFormValidationSchema,
@@ -18,7 +41,8 @@ export default function ProfileForm({ saveBtnClickHandler, updateUserData } ) {
           updateUserData(newUserData);
           saveBtnClickHandler();
         });
-    }
+    },
+    customFormValidatonSchema
   );
 
   return (

@@ -27,6 +27,7 @@ export default function Profile() {
           : <ProfileForm
               saveBtnClickHandler={editButtonClickHandler}
               updateUserData={currentUser.updateUserData}
+              userData={currentUser.userData}
           />
         }
         <div className="profile__buttons">
