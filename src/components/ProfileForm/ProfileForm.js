@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProfileFieldset from '../ProfileFieldset/ProfileFieldset';
 import TextButton from '../ui/buttons/text/TextButton';
 import { actionButtonText } from '../../shared/constants/buttons/button-text';
@@ -14,6 +14,8 @@ export default function ProfileForm(props) {
     updateUserData,
     userData,
   } = props;
+
+  const [genErrMessage, setGenErrMessage] = useState('');
 
   const customFormValidatonSchema = {
     name: {
@@ -40,14 +42,19 @@ export default function ProfileForm(props) {
         .then((newUserData) => {
           updateUserData(newUserData);
           saveBtnClickHandler();
-        });
+        })
+        .catch((err) => err.json().then((resp) => setGenErrMessage(resp.message)));
     },
     customFormValidatonSchema
   );
 
   return (
     <form className="profile-form" noValidate onSubmit={handleSubmit}>
-      <ProfileFieldset state={state} handleChange={handleChange} resetForm={resetForm} />
+      <ProfileFieldset
+        state={state}
+        handleChange={handleChange}
+        genErrMessage={genErrMessage}
+      />
       <fieldset className="profile-form__button">
         <TextButton
           label={actionButtonText.save}
