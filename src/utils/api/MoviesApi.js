@@ -14,7 +14,8 @@ class MoviesExplorer {
         method: 'GET',
       }
     )
-    .then(res => res.json())
+    //.then(resp => resp.ok ? resp.json() : Promise.reject(resp))
+    .then(resp => resp.json())
     .catch((err) => console.log(err));
   }
 }
