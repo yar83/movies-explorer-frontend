@@ -1,0 +1,9 @@
+.search-form__error {
+  margin: 0;
+  padding: 0 0 0 min(3.75vw, 25px);
+  width: 100%;
+  height: min(3.44vw, 13px);
+  font: normal normal min(3.44vw, 13px)/1 'Inter', sans-serif;
+  color: var(--red);
+  text-align: center;
+}

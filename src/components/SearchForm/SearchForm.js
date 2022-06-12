@@ -7,6 +7,7 @@ import './index.css';
 
 export default function SearchForm() {
   const [isFormFocused, setFormFocused] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   return (
     <section className="search-form">
@@ -29,6 +30,7 @@ export default function SearchForm() {
           />
         </form>
       </div>
+      <p className="search-form__error">{errorMessage}</p>
       <div className="search-form__shorts">
         <FilterCheckbox label={checkBoxCaptions.shortMeters} />
       </div>
