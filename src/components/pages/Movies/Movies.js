@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../Header/Header';
 import SearchForm from '../../SearchForm/SearchForm';
 import MoviesSection from '../../MoviesSection/MoviesSection';
@@ -10,11 +10,37 @@ export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
+  const [filteredMovies, setFilteredMoies] = useState([]);
+  const [moviesCount, setMoviesCount] = useState(12);
 
   const handleFormChange = (evt) => {
     const value = evt.target.value;
     setSearchQuery(value);
   };
+
+  const filterMoviesBySearchQuery = (rawMovies) => {
+    return rawMovies;
+  };
+
+  const getMoviesByCount = (filteredMovies) => {
+    let upToCountMovies = [];
+    if (filteredMovies.length <= moviesCount) return filteredMovies;
+    for (let i = 0; i < moviesCount; i++) upToCountMovies.push(filteredMovies[i]);
+    return upToCountMovies;
+  };
+
+  const handleMoreBtnClick = () => {
+    console.log('Count = ', moviesCount);
+    setMoviesCount(moviesCount + 3);
+  };
+
+  useEffect(() => {
+    setMovies(getMoviesByCount(filteredMovies));
+  }, [moviesCount]);
+
+  useEffect(() => {
+    setMovies(getMoviesByCount(filteredMovies));
+  }, [filteredMovies]);
 
   const submitHandler = (evt) => {
     evt.preventDefault();
@@ -24,9 +50,9 @@ export default function Movies() {
       setIsGettingMovies(true);
       setIsQueryValid(true);
       moviesApi.getMovies()
-        .then((movies) => {
+        .then((rawMovies) => {
+          setFilteredMoies(filterMoviesBySearchQuery(rawMovies));
           setIsGettingMovies(false);
-          setMovies(movies);
         });
     }
   };
@@ -41,7 +67,10 @@ export default function Movies() {
         isQueryValid={isQueryValid}
       />
       { movies.length
-        ? <MoviesSection movies={movies} />
+        ? <MoviesSection
+            movies={movies}
+            handleMoreBtnClick={handleMoreBtnClick}
+          />
         : ''
       }
       <Footer />
