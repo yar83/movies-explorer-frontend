@@ -46,13 +46,16 @@ export default function Movies() {
   };
 
   const filterMoviesBySearchQuery = (rawMovies) => {
-    return rawMovies;
+    const searchPattern = new RegExp(`^.*${searchQuery}.*$`, 'i');
+    return rawMovies.filter((movie) => searchPattern.test(movie.nameRU));
   };
 
   const getMoviesByCount = (filteredMovies) => {
     let upToCountMovies = [];
-    if (filteredMovies.length <= moviesCount) return filteredMovies;
-    for (let i = 0; i < moviesCount; i++) upToCountMovies.push(filteredMovies[i]);
+    if (filteredMovies.length <= moviesCount)
+      return filteredMovies;
+    for (let i = 0; i < moviesCount; i++)
+      upToCountMovies.push(filteredMovies[i]);
     return upToCountMovies;
   };
 
@@ -96,6 +99,7 @@ export default function Movies() {
         ? <MoviesSection
             movies={movies}
             handleMoreBtnClick={handleMoreBtnClick}
+            noMoreHiddenMovies={filteredMovies.length === movies.length}
           />
         : ''
       }
