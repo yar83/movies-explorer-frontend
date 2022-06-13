@@ -10,11 +10,26 @@ export default function Movies() {
   const getInitMoviesCount = () => {
     switch (true) {
       case window.innerWidth >= 1280:
-        return 12;
+        return (
+          {
+            initialCount: 12,
+            additionalCount: 3
+          }
+        );
       case window.innerWidth >= 768:
-        return 8;
+        return (
+          {
+            initialCount: 8,
+            additionalCount: 2
+          }
+        );
       default:
-        return 5;
+        return (
+          {
+            initialCount: 5,
+            additionalCount: 2
+          }
+        );
     }
   };
 
@@ -23,7 +38,7 @@ export default function Movies() {
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
   const [filteredMovies, setFilteredMoies] = useState([]);
-  const [moviesCount, setMoviesCount] = useState(getInitMoviesCount());
+  const [moviesCount, setMoviesCount] = useState(getInitMoviesCount().initialCount);
 
   const handleFormChange = (evt) => {
     const value = evt.target.value;
@@ -42,8 +57,7 @@ export default function Movies() {
   };
 
   const handleMoreBtnClick = () => {
-    console.log('Count = ', moviesCount);
-    setMoviesCount(moviesCount + 3);
+    setMoviesCount(moviesCount + getInitMoviesCount().additionalCount);
   };
 
   useEffect(() => {
