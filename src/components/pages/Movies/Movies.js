@@ -38,7 +38,7 @@ export default function Movies() {
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
   const [filteredMovies, setFilteredMoies] = useState([]);
-  const [moviesCount, setMoviesCount] = useState(getInitMoviesCount().initialCount);
+  const [moviesCount, setMoviesCount] = useState(0);
 
   const handleFormChange = (evt) => {
     const value = evt.target.value;
@@ -76,6 +76,7 @@ export default function Movies() {
     if (!searchQuery) {
       setIsQueryValid(false);
     } else {
+      setMoviesCount(getInitMoviesCount().initialCount);
       setIsGettingMovies(true);
       setIsQueryValid(true);
       moviesApi.getMovies()
