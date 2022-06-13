@@ -6,12 +6,24 @@ import Footer from '../../Footer/Footer';
 import moviesApi from '../../../utils/api/MoviesApi';
 
 export default function Movies() {
+
+  const getInitMoviesCount = () => {
+    switch (true) {
+      case window.innerWidth >= 1280:
+        return 12;
+      case window.innerWidth >= 768:
+        return 8;
+      default:
+        return 5;
+    }
+  };
+
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
   const [filteredMovies, setFilteredMoies] = useState([]);
-  const [moviesCount, setMoviesCount] = useState(12);
+  const [moviesCount, setMoviesCount] = useState(getInitMoviesCount());
 
   const handleFormChange = (evt) => {
     const value = evt.target.value;
