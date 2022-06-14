@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-export default function FilterCheckbox({ label, changeHandler }) {
+export default function FilterCheckbox({ label, changeHandler, initialState }) {
   
   return (
     <div className="filter-checkbox">
@@ -12,6 +12,7 @@ export default function FilterCheckbox({ label, changeHandler }) {
           id="shorts-checkbox"
           name="shorts-checkbox"
           onChange={changeHandler}
+          checked={initialState}
          />
         <span className="filter-checkbox__outline">
           <span className="filter-checkbox__indicator">
