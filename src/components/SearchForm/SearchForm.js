@@ -23,11 +23,7 @@ export default function SearchForm(props) {
   const shortMetersCheckboxHandler = (evt) => {
     const checkbox = evt.target;
     localStorage.setItem(`${checkbox.name}`, `${checkbox.checked}`);
-    setCheckboxState(
-      localStorage.getItem(`${checkbox.name}`, `${checkbox.checked}`) === 'true'
-        ? true
-        : false
-    );
+    setCheckboxState( localStorage.getItem(`${checkbox.name}`) === 'true' ? true : false);
   };
 
   return (
