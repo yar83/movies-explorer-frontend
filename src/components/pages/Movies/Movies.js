@@ -4,59 +4,24 @@ import SearchForm from '../../SearchForm/SearchForm';
 import MoviesSection from '../../MoviesSection/MoviesSection';
 import Footer from '../../Footer/Footer';
 import moviesApi from '../../../utils/api/MoviesApi';
+import { useSearch } from '../../../utils/hooks/useSearch';
 
 export default function Movies() {
-
-  const getInitMoviesCount = () => {
-    switch (true) {
-      case window.innerWidth >= 1280:
-        return (
-          {
-            initialCount: 12,
-            additionalCount: 3
-          }
-        );
-      case window.innerWidth >= 768:
-        return (
-          {
-            initialCount: 8,
-            additionalCount: 2
-          }
-        );
-      default:
-        return (
-          {
-            initialCount: 5,
-            additionalCount: 2
-          }
-        );
-    }
-  };
-
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
   const [filteredMovies, setFilteredMoies] = useState([]);
   const [moviesCount, setMoviesCount] = useState(0);
+  const {
+    getInitMoviesCount,
+    filterMoviesBySearchQuery,
+    getMoviesByCount,
+  } = useSearch();
 
   const handleFormChange = (evt) => {
     const value = evt.target.value;
     setSearchQuery(value);
-  };
-
-  const filterMoviesBySearchQuery = (rawMovies) => {
-    const searchPattern = new RegExp(`^.*${searchQuery}.*$`, 'i');
-    return rawMovies.filter((movie) => searchPattern.test(movie.nameRU));
-  };
-
-  const getMoviesByCount = (filteredMovies) => {
-    let upToCountMovies = [];
-    if (filteredMovies.length <= moviesCount)
-      return filteredMovies;
-    for (let i = 0; i < moviesCount; i++)
-      upToCountMovies.push(filteredMovies[i]);
-    return upToCountMovies;
   };
 
   const handleMoreBtnClick = () => {
@@ -64,11 +29,11 @@ export default function Movies() {
   };
 
   useEffect(() => {
-    setMovies(getMoviesByCount(filteredMovies));
+    setMovies(getMoviesByCount(filteredMovies, moviesCount));
   }, [moviesCount]);
 
   useEffect(() => {
-    setMovies(getMoviesByCount(filteredMovies));
+    setMovies(getMoviesByCount(filteredMovies, moviesCount));
   }, [filteredMovies]);
 
   const submitHandler = (evt) => {
@@ -81,7 +46,7 @@ export default function Movies() {
       setIsQueryValid(true);
       moviesApi.getMovies()
         .then((rawMovies) => {
-          setFilteredMoies(filterMoviesBySearchQuery(rawMovies));
+          setFilteredMoies(filterMoviesBySearchQuery(rawMovies, searchQuery));
           setIsGettingMovies(false);
         });
     }
