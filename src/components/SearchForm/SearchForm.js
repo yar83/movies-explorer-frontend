@@ -15,6 +15,11 @@ export default function SearchForm(props) {
 
   const [isFormFocused, setFormFocused] = useState(false);
 
+  const shortMetersCheckboxHandler = (evt) => {
+    const checkbox = evt.target;
+    localStorage.setItem(`${checkbox.name}`, `${checkbox.checked}`);
+  };
+
   return (
     <section className="search-form">
       <div className={`search-form__form ${isFormFocused ? 'search-form__form_focused' : ''}`}>
@@ -39,7 +44,9 @@ export default function SearchForm(props) {
       </div>
       <p className="search-form__error">{isQueryValid ? '' : 'Нужно ввести ключевое слово'}</p>
       <div className="search-form__shorts">
-        <FilterCheckbox label={checkBoxCaptions.shortMeters} />
+        <FilterCheckbox
+          label={checkBoxCaptions.shortMeters}
+          changeHandler={shortMetersCheckboxHandler}/>
       </div>
     </section>
   );
