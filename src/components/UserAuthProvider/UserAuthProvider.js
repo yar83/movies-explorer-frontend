@@ -5,20 +5,23 @@ import mainApi from '../../utils/api/MainApi';
 
 export default function UserAuthProvider ({ children }) {
   const [userData, setUserData] = useState(null);
+  const [userMovies, setUserMovies] = useState([]);
 
   const navigate = useNavigate();
 
   const signin = (email, password, cb) => {
     return mainApi.signin(email, password)
       .then(() => {
-        return mainApi.getUserData()
-          .then((user) => {
-            setUserData(user);
+        Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
+          .then((values) => {
+            setUserData(values[0]);
+            setUserMovies(values[1]);
             cb();
           });
       })
       .catch((err) => Promise.reject(err));
   }
+
 
   const signout = (cb) => {
     return mainApi.signout()
@@ -31,13 +34,14 @@ export default function UserAuthProvider ({ children }) {
   const updateUserData = (newUserData) => setUserData(newUserData);
 
   useEffect(() => {
-    mainApi.getUserData()
-      .then((user) => {
-        setUserData(user);
+    Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
+      .then((values) => {
+        setUserData(values[0]);
+        setUserMovies(values[1]);
       });
   }, []);
 
-  const value = { userData, signin, signout, updateUserData };
+  const value = { userData, userMovies, signin, signout, updateUserData };
 
   return <UserAuthContext.Provider value={value}>{children}</UserAuthContext.Provider>;
 }

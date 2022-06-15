@@ -102,6 +102,18 @@ class MainApi {
     )
       .then(this.#checkResp);
   }
+
+  getUserMovies() {
+    return fetch(
+      `${this.#base}${this.#ends.movies}`,
+      {
+        method: 'GET',
+        credentials: 'include',
+      }
+    )
+      .then(this.#checkResp);
+  }
+
 }
 
 export default new MainApi(baseUrl, endpoints);

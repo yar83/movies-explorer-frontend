@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './index.css';
 import MoviePoster from '../ui/pictures/MoviePoster/MoviePoster';
 import MovieDuration from '../ui/labels/MovieDuration/MovieDuration';
@@ -7,11 +7,12 @@ import SolidButton from '../ui/buttons/solid/SolidButton';
 import IconButton from '../ui/buttons/icon/IconButton';
 import MovieTitle from '../ui/labels/MovieTitle/MovieTitle';
 import {actionButtonText} from '../../shared/constants/buttons/button-text';
-import moviesIdsMock from '../../shared/mock/moviesdb-mock';
 import { useLocation } from 'react-router-dom';
+import { UserAuthContext } from '../../contexts/UserAuthContext'; 
 
 export default function MoviesCard(props) {
   const { id, title, duration = 0, posterUrl, addMovieToSaved } = props;
+  const { userMovies } = useContext(UserAuthContext);
   let location = useLocation();
 
   const clickHandler = () => {
@@ -25,7 +26,7 @@ export default function MoviesCard(props) {
         {location.pathname === '/movies'
           ? (
               <div className="movies-card__label">
-                {moviesIdsMock.ids.includes(id)
+                {userMovies.find((movie) => movie.movieId === id)
                   ? <MovieSaved /> 
                   : <SolidButton
                       view="gray-save"
