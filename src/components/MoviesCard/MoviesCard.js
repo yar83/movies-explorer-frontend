@@ -10,8 +10,13 @@ import {actionButtonText} from '../../shared/constants/buttons/button-text';
 import moviesIdsMock from '../../shared/mock/moviesdb-mock';
 import { useLocation } from 'react-router-dom';
 
-export default function MoviesCard({ id, title, duration = 0, posterUrl }) {
+export default function MoviesCard(props) {
+  const { id, title, duration = 0, posterUrl, addMovieToSaved } = props;
   let location = useLocation();
+
+  const clickHandler = () => {
+    addMovieToSaved(id);
+  };
 
   return (
     <div className="movies-card">
@@ -22,7 +27,11 @@ export default function MoviesCard({ id, title, duration = 0, posterUrl }) {
               <div className="movies-card__label">
                 {moviesIdsMock.ids.includes(id)
                   ? <MovieSaved /> 
-                  : <SolidButton view="gray-save" label={actionButtonText.save} />
+                  : <SolidButton
+                      view="gray-save"
+                      label={actionButtonText.save}
+                      handleClick={clickHandler}
+                    />
                 }
               </div>
             )

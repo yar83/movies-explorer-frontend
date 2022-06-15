@@ -86,6 +86,22 @@ class MainApi {
     )
       .then(this.#checkResp);
   }
+
+  saveMovie(movieData) {
+    return fetch(
+      `${this.#base}${this.#ends.movies}`,
+      {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(movieData),
+      },
+    )
+      .then(this.#checkResp);
+  }
 }
 
 export default new MainApi(baseUrl, endpoints);
