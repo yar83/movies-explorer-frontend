@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './index.css';
 import MoviePoster from '../ui/pictures/MoviePoster/MoviePoster';
 import MovieDuration from '../ui/labels/MovieDuration/MovieDuration';
@@ -13,10 +13,11 @@ import { UserAuthContext } from '../../contexts/UserAuthContext';
 export default function MoviesCard(props) {
   const { id, title, duration = 0, posterUrl, addMovieToSaved } = props;
   const { userMovies } = useContext(UserAuthContext);
+  const [ movieSaved, setMovieSaved ] = useState(false);
   let location = useLocation();
 
   const clickHandler = () => {
-    addMovieToSaved(id);
+    addMovieToSaved(id, () => setMovieSaved(true))
   };
 
   return (
@@ -26,7 +27,7 @@ export default function MoviesCard(props) {
         {location.pathname === '/movies'
           ? (
               <div className="movies-card__label">
-                {userMovies.find((movie) => movie.movieId === id)
+                {userMovies.find((movie) => movie.movieId === id) || movieSaved
                   ? <MovieSaved /> 
                   : <SolidButton
                       view="gray-save"

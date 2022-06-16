@@ -8,7 +8,7 @@ import { endpoint } from '../../utils/const/moviesApi';
 export default function MoviesCardList({ movies }) {
   const currentUser = useContext(UserAuthContext); 
   
-  const addMovieToSaved = (id) => {
+  const addMovieToSaved = (id, cb) => {
     const movie = movies.find((movie) => movie.id === id);
     mainApi.saveMovie({
       country: movie.country,
@@ -24,7 +24,9 @@ export default function MoviesCardList({ movies }) {
       nameRU: movie.nameRU,
       nameEN: movie.nameEN,
     })
-      .then((movie) => console.log(movie))
+      .then(() => {
+        cb();
+      })
       .catch((err) => console.log(err));
   }
 

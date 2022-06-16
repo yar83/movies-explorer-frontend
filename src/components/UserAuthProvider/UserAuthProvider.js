@@ -33,6 +33,12 @@ export default function UserAuthProvider ({ children }) {
 
   const updateUserData = (newUserData) => setUserData(newUserData);
 
+  const updateUserMovies = () => {
+    mainApi.getUserMovies()
+      .then((movies) => setUserMovies)
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
       .then((values) => {
@@ -41,7 +47,7 @@ export default function UserAuthProvider ({ children }) {
       });
   }, []);
 
-  const value = { userData, userMovies, signin, signout, updateUserData };
+  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies };
 
   return <UserAuthContext.Provider value={value}>{children}</UserAuthContext.Provider>;
 }
