@@ -4,6 +4,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import GhostButton from '../ui/buttons/ghost/GhostButton'; 
 import { actionButtonText } from '../../shared/constants/buttons/button-text';
 import Preloader from '../Preloader/Preloader';
+import NotFound from '../NotFound/NotFound';
 import './index.css';
 
 export default function MoviesSection(props) {
@@ -21,7 +22,16 @@ export default function MoviesSection(props) {
         <Preloader />
       </section>
     )
-  } else if(movies) {
+  } else if (
+      localStorage.getItem('filtered-movies') &&
+      JSON.parse(localStorage.getItem('filtered-movies')).length === 0
+    ) {
+      return (
+        <section className="movies-section">
+          <NotFound />
+        </section>
+    )
+  } else {
     return (
       <section className="movies-section">
         <MoviesCardList movies={movies} />
@@ -35,10 +45,5 @@ export default function MoviesSection(props) {
         }
       </section>
     );
-  } else {
-    return (
-      <section className="movies-section">
-      </section>
-    )
-  }
+  } 
 };
