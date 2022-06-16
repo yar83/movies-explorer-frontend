@@ -20,6 +20,7 @@ export default function Movies() {
   const [filteredMovies, setFilteredMoies] = useState([]);
   const [moviesCount, setMoviesCount] = useState(0);
   const [checkboxState, setCheckboxState] = useState(setMetersCheckboxInitState());
+  const [externalError, setExternalError] = useState(false);
   const {
     getInitMoviesCount,
     filterMoviesBySearchQuery,
@@ -68,7 +69,10 @@ export default function Movies() {
           saveSearchAttrs(searchQuery, filteredMovies, checkboxState);
           setFilteredMoies(filteredMovies);
           setIsGettingMovies(false);
-        });
+        })
+        .catch(() => {
+          setExternalError(true);
+        })
     }
   };
     
@@ -88,6 +92,7 @@ export default function Movies() {
         handleMoreBtnClick={handleMoreBtnClick}
         noMoreHiddenMovies={filteredMovies.length === movies.length}
         isGettingMovies={isGettingMovies}
+        externalError={externalError}
       />
       <Footer />
     </>
