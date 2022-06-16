@@ -11,20 +11,11 @@ export default function SearchForm(props) {
     handleFormChange,
     submitHandler,
     isQueryValid,
+    shortMetersCheckboxHandler,
+    initCheckBoxState
   } = props;
 
-  const setMetersCheckboxInitState = () => {
-    return localStorage.getItem('shorts-checkbox') === 'true' ? true : false;
-  }
-
   const [isFormFocused, setFormFocused] = useState(false);
-  const [checkboxState, setCheckboxState] = useState(setMetersCheckboxInitState());
-
-  const shortMetersCheckboxHandler = (evt) => {
-    const checkbox = evt.target;
-    localStorage.setItem(`${checkbox.name}`, `${checkbox.checked}`);
-    setCheckboxState( localStorage.getItem(`${checkbox.name}`) === 'true' ? true : false);
-  };
 
   return (
     <section className="search-form">
@@ -53,7 +44,7 @@ export default function SearchForm(props) {
         <FilterCheckbox
           label={checkBoxCaptions.shortMeters}
           changeHandler={shortMetersCheckboxHandler}
-          initialState={checkboxState}
+          initialState={initCheckBoxState}
         />
       </div>
     </section>

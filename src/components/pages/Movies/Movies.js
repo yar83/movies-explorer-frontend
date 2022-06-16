@@ -7,17 +7,29 @@ import moviesApi from '../../../utils/api/MoviesApi';
 import { useSearch } from '../../../utils/hooks/useSearch';
 
 export default function Movies() {
+  const setMetersCheckboxInitState = () => {
+    return localStorage.getItem('search-movies-checkbox-state') === 'true'
+      ? true
+      : false;
+  }
+
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
   const [filteredMovies, setFilteredMoies] = useState([]);
   const [moviesCount, setMoviesCount] = useState(0);
+  const [checkboxState, setCheckboxState] = useState(setMetersCheckboxInitState());
   const {
     getInitMoviesCount,
     filterMoviesBySearchQuery,
     getMoviesByCount,
   } = useSearch();
+
+  const shortMetersCheckboxHandler = (evt) => {
+    const checkbox = evt.target;
+    setCheckboxState(checkbox.checked);
+  };
 
   const handleFormChange = (evt) => {
     const value = evt.target.value;
@@ -26,6 +38,12 @@ export default function Movies() {
 
   const handleMoreBtnClick = () => {
     setMoviesCount(moviesCount + getInitMoviesCount().additionalCount);
+  };
+
+  const saveSearchAttrs = (searchQuery, filteredMovies, checkboxState) => {
+    localStorage.setItem('search-movies-query', searchQuery);
+    localStorage.setItem('filtered-movies', JSON.stringify(filteredMovies));
+    localStorage.setItem('search-movies-checkbox-state', checkboxState);
   };
 
   useEffect(() => {
@@ -46,7 +64,9 @@ export default function Movies() {
       setIsQueryValid(true);
       moviesApi.getMovies()
         .then((rawMovies) => {
-          setFilteredMoies(filterMoviesBySearchQuery(rawMovies, searchQuery));
+          const filteredMovies = filterMoviesBySearchQuery(rawMovies, searchQuery);
+          saveSearchAttrs(searchQuery, filteredMovies, checkboxState);
+          setFilteredMoies(filteredMovies);
           setIsGettingMovies(false);
         });
     }
@@ -60,6 +80,8 @@ export default function Movies() {
         handleFormChange={handleFormChange}
         submitHandler={submitHandler}
         isQueryValid={isQueryValid}
+        shortMetersCheckboxHandler={shortMetersCheckboxHandler}
+        initCheckBoxState={checkboxState}
       />
       { movies.length
         ? <MoviesSection
