@@ -83,14 +83,12 @@ export default function Movies() {
         shortMetersCheckboxHandler={shortMetersCheckboxHandler}
         initCheckBoxState={checkboxState}
       />
-      { movies.length
-        ? <MoviesSection
-            movies={movies}
-            handleMoreBtnClick={handleMoreBtnClick}
-            noMoreHiddenMovies={filteredMovies.length === movies.length}
-          />
-        : ''
-      }
+      <MoviesSection
+        movies={movies}
+        handleMoreBtnClick={handleMoreBtnClick}
+        noMoreHiddenMovies={filteredMovies.length === movies.length}
+        isGettingMovies={isGettingMovies}
+      />
       <Footer />
     </>
   );
