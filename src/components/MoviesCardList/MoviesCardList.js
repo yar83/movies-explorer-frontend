@@ -31,6 +31,15 @@ export default function MoviesCardList({ movies }) {
       .catch((err) => console.log(err));
   }
 
+  const delMovieFromSaved = (id, cb) => {
+    mainApi.delMovie(id)
+      .then(() => {
+        currentUser.updateUserMovies();
+        cb();
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="movies-card-list">
       {movies.map((movie) => (
@@ -41,6 +50,7 @@ export default function MoviesCardList({ movies }) {
           duration={movie.duration}
           posterUrl={`https://api.nomoreparties.co${movie.image.url}`}
           addMovieToSaved={addMovieToSaved}
+          delMovieFromSaved={delMovieFromSaved}
         />
       ))}
     </div>

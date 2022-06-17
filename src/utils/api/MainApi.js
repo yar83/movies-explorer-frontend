@@ -103,6 +103,18 @@ class MainApi {
       .then(this.#checkResp);
   }
 
+  delMovie(movieId) {
+    return fetch(
+      `${this.#base}${this.#ends.movies}/${movieId}`,
+      {
+        method: 'DELETE',
+        credentials: 'include',
+      })
+        .then(this.#checkResp)
+        .catch((err) => console.log(err));
+  }
+
+
   getUserMovies() {
     return fetch(
       `${this.#base}${this.#ends.movies}`,
@@ -113,7 +125,6 @@ class MainApi {
     )
       .then(this.#checkResp);
   }
-
 }
 
 export default new MainApi(baseUrl, endpoints);

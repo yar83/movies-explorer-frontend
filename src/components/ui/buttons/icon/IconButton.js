@@ -6,11 +6,11 @@ export default function IconButton(props) {
   const {
     view,
     glyph,
-    clickHandler
+    handleClick
   } = props;
 
   return (
-    <button className={`icon-button icon-button_${view}`} onClick={clickHandler}>
+    <button className={`icon-button icon-button_${view}`} onClick={handleClick}>
       <Icon glyph={glyph} />
     </button>
   );

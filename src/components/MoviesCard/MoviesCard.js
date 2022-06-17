@@ -10,14 +10,19 @@ import { useLocation } from 'react-router-dom';
 import { UserAuthContext } from '../../contexts/UserAuthContext'; 
 
 export default function MoviesCard(props) {
-  const { id, title, duration = 0, posterUrl, addMovieToSaved } = props;
+  const { id, title, duration = 0, posterUrl, addMovieToSaved, delMovieFromSaved } = props;
   const { userMovies } = useContext(UserAuthContext);
   const [ movieSaved, setMovieSaved ] = useState(false);
   let location = useLocation();
 
-  const clickHandler = () => {
-    addMovieToSaved(id, () => setMovieSaved(true))
+  const handleSaveBtnClick = () => {
+    addMovieToSaved(id, () => setMovieSaved(true));
   };
+
+  const handleTickBtnClick = () => {
+    console.log(id);
+    delMovieFromSaved(id, () => setMovieSaved(false));
+  }
 
   return (
     <div className="movies-card">
@@ -30,12 +35,12 @@ export default function MoviesCard(props) {
                   ? <IconButton
                       view="tick"
                       glyph="tick"
-                      handleClick={clickHandler}
+                      handleClick={handleTickBtnClick}
                     />
                   : <SolidButton
                       view="gray-save"
                       label={actionButtonText.save}
-                      handleClick={clickHandler}
+                      handleClick={handleSaveBtnClick}
                     />
                 }
               </div>
