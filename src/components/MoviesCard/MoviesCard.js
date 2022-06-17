@@ -28,7 +28,11 @@ export default function MoviesCard(props) {
           ? (
               <div className="movies-card__label">
                 {userMovies.find((movie) => movie.movieId === id) || movieSaved
-                  ? <MovieSaved /> 
+                  ? <IconButton
+                      view="tick"
+                      glyph="tick"
+                      handleClick={clickHandler}
+                    />
                   : <SolidButton
                       view="gray-save"
                       label={actionButtonText.save}
