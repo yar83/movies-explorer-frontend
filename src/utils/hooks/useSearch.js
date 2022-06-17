@@ -27,8 +27,7 @@ export function useSearch() {
     }
   };
 
-  const filterMoviesBySearchQuery = (rawMovies, searchQuery) => {
-    const isShortsChecked = localStorage.getItem('shorts-checkbox') === 'true' ? true : false;
+  const filterMoviesBySearchQuery = (rawMovies, searchQuery, isShortsChecked) => {
     const searchPattern = new RegExp(`^.*${searchQuery}.*$`, 'i');
     return isShortsChecked
       ?

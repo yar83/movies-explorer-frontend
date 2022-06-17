@@ -65,7 +65,7 @@ export default function Movies() {
       setIsQueryValid(true);
       moviesApi.getMovies()
         .then((rawMovies) => {
-          const filteredMovies = filterMoviesBySearchQuery(rawMovies, searchQuery);
+          const filteredMovies = filterMoviesBySearchQuery(rawMovies, searchQuery, checkboxState);
           saveSearchAttrs(searchQuery, filteredMovies, checkboxState);
           setFilteredMoies(filteredMovies);
           setIsGettingMovies(false);

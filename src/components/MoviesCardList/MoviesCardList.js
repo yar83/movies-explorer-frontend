@@ -25,6 +25,7 @@ export default function MoviesCardList({ movies }) {
       nameEN: movie.nameEN,
     })
       .then(() => {
+        currentUser.updateUserMovies();
         cb();
       })
       .catch((err) => console.log(err));

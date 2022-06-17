@@ -35,7 +35,7 @@ export default function UserAuthProvider ({ children }) {
 
   const updateUserMovies = () => {
     mainApi.getUserMovies()
-      .then((movies) => setUserMovies)
+      .then((movies) => setUserMovies(movies))
       .catch((err) => console.log(err));
   };
 
