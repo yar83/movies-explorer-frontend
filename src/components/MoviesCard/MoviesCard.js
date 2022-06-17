@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import './index.css';
 import MoviePoster from '../ui/pictures/MoviePoster/MoviePoster';
 import MovieDuration from '../ui/labels/MovieDuration/MovieDuration';
-import MovieSaved from '../ui/labels/MovieSaved/MovieSaved';
 import SolidButton from '../ui/buttons/solid/SolidButton';
 import IconButton from '../ui/buttons/icon/IconButton';
 import MovieTitle from '../ui/labels/MovieTitle/MovieTitle';
