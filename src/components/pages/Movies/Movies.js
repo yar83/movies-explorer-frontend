@@ -13,7 +13,17 @@ export default function Movies() {
       : false;
   }
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const setSearchQueryInitState = () => {
+    const savedSearchQuery = localStorage.getItem('search-movies-query');
+    return savedSearchQuery || ''; 
+  }
+
+  const setMoviesInitState = () => {
+    const savedMovies = localStorage.getItem('filtered-movies');
+    return savedMovies ? JSON.parse(savedMovies) : [];
+  }
+
+  const [searchQuery, setSearchQuery] = useState(setSearchQueryInitState());
   const [movies, setMovies] = useState([]);
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
@@ -54,6 +64,11 @@ export default function Movies() {
   useEffect(() => {
     setMovies(getMoviesByCount(filteredMovies, moviesCount));
   }, [filteredMovies]);
+
+  useEffect(() => {
+    setMoviesCount(getInitMoviesCount().initialCount);
+    setFilteredMovies(setMoviesInitState());
+  }, []);
 
   const submitHandler = (evt) => {
     evt.preventDefault();
