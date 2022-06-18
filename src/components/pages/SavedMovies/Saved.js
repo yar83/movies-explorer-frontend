@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from '../../Header/Header';
 import SearchForm from '../../SearchForm/SearchForm';
 import MoviesSection from '../../MoviesSection/MoviesSection';
@@ -8,12 +8,19 @@ import { UserAuthContext } from '../../../contexts/UserAuthContext';
 import './index.css';
 
 export default function Saved() {
+  const { userMovies } = useContext(UserAuthContext);
+
   const getInitCheckboxState = () => {
     return localStorage.getItem('search-saved-movies-checkbox-state') === 'true'
       ? true
       : false;
   }
-  const { userMovies } = useContext(UserAuthContext);
+
+  const getInitSearchQuery = () => {
+    const searchQuery = localStorage.getItem('search-saved-movies-query');
+    return searchQuery ? searchQuery : '';
+  }
+
   const castMoviesArrToPresentableView = (rawArr) => rawArr.map((movie) => (
       {
         id: movie.movieId,
@@ -25,14 +32,15 @@ export default function Saved() {
       }
   ));
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isQueryValid, setIsQueryValid] = useState(true);
-  const [filteredMovies, setFilteredMovies] = useState([]);
-  const [checkboxState, setCheckboxState] = useState(getInitCheckboxState());
   const { filterMoviesBySearchQuery } = useSearch();
+  const [searchQuery, setSearchQuery] = useState(getInitSearchQuery());
+  const [checkboxState, setCheckboxState] = useState(getInitCheckboxState());
+  const [isQueryValid, setIsQueryValid] = useState(true);
+  const [filteredMovies, setFilteredMovies] = useState(() => searchQuery ? castMoviesArrToPresentableView(filterMoviesBySearchQuery(userMovies, searchQuery, checkboxState)) : []);
 
-  const saveSearchAttrs = (checkboxState) => {
+  const saveSearchAttrs = () => {
     localStorage.setItem('search-saved-movies-checkbox-state', checkboxState);
+    localStorage.setItem('search-saved-movies-query', searchQuery);
   };
 
   const handleCheckboxChange = (evt) => {
@@ -46,11 +54,10 @@ export default function Saved() {
   };
 
   const delMovieCardByMovieId = (movieId) => {
-    console.log(movieId);
     setFilteredMovies(
       filteredMovies.filter((movie) => movie.id !== movieId)
     );
-  }
+  };
 
   const submitHandler = (evt) => {
     evt.preventDefault();
@@ -58,7 +65,7 @@ export default function Saved() {
       setIsQueryValid(false);
     } else {
       setIsQueryValid(true);
-      saveSearchAttrs(checkboxState);
+      saveSearchAttrs();
       setFilteredMovies(
         castMoviesArrToPresentableView(
           filterMoviesBySearchQuery(userMovies, searchQuery, checkboxState)
