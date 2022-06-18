@@ -45,6 +45,13 @@ export default function Saved() {
     setSearchQuery(value);
   };
 
+  const delMovieCardByMovieId = (movieId) => {
+    console.log(movieId);
+    setFilteredMovies(
+      filteredMovies.filter((movie) => movie.id !== movieId)
+    );
+  }
+
   const submitHandler = (evt) => {
     evt.preventDefault();
     if (!searchQuery) {
@@ -71,7 +78,7 @@ export default function Saved() {
         shortMetersCheckboxHandler={handleCheckboxChange}
         initCheckBoxState={checkboxState}
       />
-      <MoviesSection movies={filteredMovies} />
+      <MoviesSection movies={filteredMovies} delCard={delMovieCardByMovieId} />
       <Footer />
     </>
   );

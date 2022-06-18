@@ -15,6 +15,7 @@ export default function MoviesSection(props) {
     noMoreHiddenMovies,
     isGettingMovies,
     externalError,
+    delCard,
   } = props;
 
   let location = useLocation();
@@ -43,7 +44,7 @@ export default function MoviesSection(props) {
     default:
       return (
         <section className="movies-section">
-          <MoviesCardList movies={movies} />
+          <MoviesCardList movies={movies} delCard={delCard} />
           { !noMoreHiddenMovies && location.pathname === '/movies' &&
             <div className="movies-section__more">
               <GhostButton

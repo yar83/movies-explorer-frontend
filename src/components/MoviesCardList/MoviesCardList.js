@@ -5,7 +5,7 @@ import mainApi from '../../utils/api/MainApi';
 import { UserAuthContext } from '../../contexts/UserAuthContext'; 
 import { endpoint } from '../../utils/const/moviesApi';
 
-export default function MoviesCardList({ movies }) {
+export default function MoviesCardList({ movies, delCard }) {
   const currentUser = useContext(UserAuthContext); 
   
   const addMovieToSaved = (id, cb) => {
@@ -51,6 +51,7 @@ export default function MoviesCardList({ movies }) {
           posterUrl={`https://api.nomoreparties.co${movie.image.url}`}
           addMovieToSaved={addMovieToSaved}
           delMovieFromSaved={delMovieFromSaved}
+          delCard={delCard}
         />
       ))}
     </div>
