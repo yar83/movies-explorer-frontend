@@ -31,6 +31,7 @@ export default function Movies() {
   const [moviesCount, setMoviesCount] = useState(0);
   const [checkboxState, setCheckboxState] = useState(setMetersCheckboxInitState());
   const [externalError, setExternalError] = useState(false);
+  const [isAfterSearch, setIsAfterSearch] = useState(false);
   const {
     getInitMoviesCount,
     filterMoviesBySearchQuery,
@@ -68,6 +69,7 @@ export default function Movies() {
   useEffect(() => {
     setMoviesCount(getInitMoviesCount().initialCount);
     setFilteredMovies(setMoviesInitState());
+    setIsAfterSearch(true);
   }, []);
 
   const submitHandler = (evt) => {
@@ -82,7 +84,9 @@ export default function Movies() {
         .then((rawMovies) => {
           const filteredMovies = filterMoviesBySearchQuery(rawMovies, searchQuery, checkboxState);
           saveSearchAttrs(searchQuery, filteredMovies, checkboxState);
+          setIsAfterSearch(true);
           setFilteredMovies(filteredMovies);
+
           setIsGettingMovies(false);
         })
         .catch(() => {
@@ -108,6 +112,7 @@ export default function Movies() {
         noMoreHiddenMovies={filteredMovies.length === movies.length}
         isGettingMovies={isGettingMovies}
         externalError={externalError}
+        isAfterSearch={isAfterSearch}
       />
       <Footer />
     </>

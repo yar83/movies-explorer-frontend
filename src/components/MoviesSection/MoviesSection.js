@@ -16,6 +16,7 @@ export default function MoviesSection(props) {
     isGettingMovies,
     externalError,
     delCard,
+    isAfterSearch
   } = props;
 
   let location = useLocation();
@@ -27,9 +28,7 @@ export default function MoviesSection(props) {
           <Preloader />
         </section>
       )
-    case
-      localStorage.getItem('filtered-movies') &&
-      JSON.parse(localStorage.getItem('filtered-movies')).length === 0:
+    case movies.length === 0 && isAfterSearch:
         return (
           <section className="movies-section">
             <NotFound />

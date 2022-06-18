@@ -36,7 +36,19 @@ export default function Saved() {
   const [searchQuery, setSearchQuery] = useState(getInitSearchQuery());
   const [checkboxState, setCheckboxState] = useState(getInitCheckboxState());
   const [isQueryValid, setIsQueryValid] = useState(true);
-  const [filteredMovies, setFilteredMovies] = useState(() => searchQuery ? castMoviesArrToPresentableView(filterMoviesBySearchQuery(userMovies, searchQuery, checkboxState)) : []);
+  const [isAfterSearch, setIsAfterSearch] = useState(false);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem('search-saved-movies-query')) {
+      setIsAfterSearch(true);
+      setFilteredMovies(
+        castMoviesArrToPresentableView(
+          filterMoviesBySearchQuery(userMovies, searchQuery, checkboxState)
+        )
+      );
+    }
+    }, []);
 
   const saveSearchAttrs = () => {
     localStorage.setItem('search-saved-movies-checkbox-state', checkboxState);
@@ -85,7 +97,11 @@ export default function Saved() {
         shortMetersCheckboxHandler={handleCheckboxChange}
         initCheckBoxState={checkboxState}
       />
-      <MoviesSection movies={filteredMovies} delCard={delMovieCardByMovieId} />
+      <MoviesSection
+        movies={filteredMovies} 
+        delCard={delMovieCardByMovieId}
+        isAfterSearch={isAfterSearch}
+      />
       <Footer />
     </>
   );
