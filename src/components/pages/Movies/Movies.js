@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../Header/Header';
 import SearchForm from '../../SearchForm/SearchForm';
 import MoviesSection from '../../MoviesSection/MoviesSection';
@@ -17,7 +17,7 @@ export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [isQueryValid, setIsQueryValid] = useState(true);
   const [isGettingMovies, setIsGettingMovies] = useState(false);
-  const [filteredMovies, setFilteredMoies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
   const [moviesCount, setMoviesCount] = useState(0);
   const [checkboxState, setCheckboxState] = useState(setMetersCheckboxInitState());
   const [externalError, setExternalError] = useState(false);
@@ -67,7 +67,7 @@ export default function Movies() {
         .then((rawMovies) => {
           const filteredMovies = filterMoviesBySearchQuery(rawMovies, searchQuery, checkboxState);
           saveSearchAttrs(searchQuery, filteredMovies, checkboxState);
-          setFilteredMoies(filteredMovies);
+          setFilteredMovies(filteredMovies);
           setIsGettingMovies(false);
         })
         .catch(() => {
