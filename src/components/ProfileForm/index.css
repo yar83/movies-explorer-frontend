@@ -1,2 +1,5 @@
 @import url(./profile-form.css);
 @import url(./__button/profile-form__button.css);
+@import url(./__info/profile-form__info.css);
+@import url(./__info-tooltip/profile-form__info-tooltip.css);
+@import url(./__info-tooltip-text/profile-form__info-tooltip-text.css);

@@ -6,6 +6,7 @@ import { useForm } from '../../utils/hooks/useForm';
 import { editProfileFormSchema } from '../../utils/validation/formSchema';
 import { editProfileFormValidationSchema } from '../../utils/validation/formValidationSchema';
 import mainApi from '../../utils/api/MainApi';
+import Icon from '../ui/icon/Icon';
 import './index.css';
 
 export default function ProfileForm(props) {
@@ -34,7 +35,7 @@ export default function ProfileForm(props) {
     },
   };
 
-  const { state, buttonDisabled, handleChange, handleSubmit, resetForm } = useForm(
+  const { state, buttonDisabled, handleChange, handleSubmit } = useForm(
     editProfileFormSchema,
     editProfileFormValidationSchema,
     () => {
@@ -64,6 +65,12 @@ export default function ProfileForm(props) {
           isDisabled={buttonDisabled}
           handleClick={() => null}
         />
+        <div className="profile-form__info">
+          <Icon glyph="info-sign" />
+          <div className="profile-form__info-tooltip">
+            <span className="profile-form__info-tooltip-text">Введите данные, которые вы хотите изменить. Можно ввести Имя и адрес электронной почты, либо и то и другое одновременно.</span>
+          </div>
+        </div>
       </fieldset>
     </form>
   );
