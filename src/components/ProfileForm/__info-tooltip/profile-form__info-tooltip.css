@@ -6,5 +6,6 @@
   right: -98px;
   padding: 2px;
   border: 1px dashed var(--gray-text);
+  background: var(--gray);
   display: none;
 }
