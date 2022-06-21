@@ -1,6 +1,6 @@
-export const baseUrl = 'https://api.eternalmovies.nomoredomains.work';
+export const BASEURL= 'https://api.eternalmovies.nomoredomains.work';
 
-export const endpoints = {
+export const ENDPOINTS = {
   signup: '/signup',
   signin: '/signin',
   signout: '/signout',

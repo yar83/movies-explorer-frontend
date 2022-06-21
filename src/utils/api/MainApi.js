@@ -1,4 +1,4 @@
-import { baseUrl, endpoints } from "../const/mainApi";
+import { ENDPOINTS, BASEURL } from "../const/mainApi";
 
 class MainApi {
   #base;
@@ -127,4 +127,4 @@ class MainApi {
   }
 }
 
-export default new MainApi(baseUrl, endpoints);
+export default new MainApi(BASEURL, ENDPOINTS);

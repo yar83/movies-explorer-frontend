@@ -1,1 +1,1 @@
-export const endpoint = 'https://api.nomoreparties.co/beatfilm-movies';
+export const ENDPOINT = 'https://api.nomoreparties.co/beatfilm-movies';

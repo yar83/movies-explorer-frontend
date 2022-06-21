@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { UserAuthContext } from '../../contexts/UserAuthContext';
 import mainApi from '../../utils/api/MainApi'; 
 
 export default function UserAuthProvider ({ children }) {
   const [userData, setUserData] = useState(null);
   const [userMovies, setUserMovies] = useState([]);
-
-  const navigate = useNavigate();
 
   const signin = (email, password, cb) => {
     return mainApi.signin(email, password)

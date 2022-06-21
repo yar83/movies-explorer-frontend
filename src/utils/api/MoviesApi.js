@@ -1,4 +1,4 @@
-import { endpoint } from '../const/moviesApi';
+import { ENDPOINT } from '../const/moviesApi';
 
 class MoviesExplorer {
   #endpoint;
@@ -19,4 +19,4 @@ class MoviesExplorer {
   }
 }
 
-export default new MoviesExplorer(endpoint);
+export default new MoviesExplorer(ENDPOINT);

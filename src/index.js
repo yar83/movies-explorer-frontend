@@ -10,9 +10,11 @@ const container = document.getElementById('root');
 const root = ReactDOMClient.createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <UserAuthProvider>
-      <App />
-    </UserAuthProvider>
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <UserAuthProvider>
+        <App />
+      </UserAuthProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );

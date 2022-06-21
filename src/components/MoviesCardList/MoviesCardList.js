@@ -3,7 +3,7 @@ import './index.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import mainApi from '../../utils/api/MainApi';
 import { UserAuthContext } from '../../contexts/UserAuthContext'; 
-import { endpoint } from '../../utils/const/moviesApi';
+import { ENDPOINT } from '../../utils/const/moviesApi';
 
 export default function MoviesCardList({ movies, delCard }) {
   const currentUser = useContext(UserAuthContext); 
@@ -17,8 +17,8 @@ export default function MoviesCardList({ movies, delCard }) {
       year: movie.year,
       description: movie.description,
       trailerLink: movie.trailerLink,
-      image: `${endpoint}${movie.image.url}`,
-      thumbnail: `${endpoint}${movie.image.formats.thumbnail.url}`,
+      image: `${ENDPOINT}${movie.image.url}`,
+      thumbnail: `${ENDPOINT}${movie.image.formats.thumbnail.url}`,
       owner: currentUser._id,
       movieId: movie.id,
       nameRU: movie.nameRU,
