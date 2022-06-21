@@ -6,16 +6,40 @@ import Saved from '../pages/SavedMovies/Saved';
 import ProfilePage from '../pages/Profile/ProfilePage';
 import SignIn from '../pages/SignIn/SignIn'; 
 import Register from '../pages/Register/Register';
+import RequireAuth from '../RequireAuth/RequireAuth';
+import Page404 from '../pages/Page404/Page404';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/movies" element={<Movies />} />
-      <Route path="/saved-movies" element={<Saved />} />
-      <Route path="/profile" element={<ProfilePage />} />
+      <Route
+        path="/movies"
+        element={
+          <RequireAuth>
+            <Movies />
+          </RequireAuth>
+        } 
+      />
+      <Route
+        path="/saved-movies"
+        element={
+          <RequireAuth>
+            <Saved />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <RequireAuth>
+            <ProfilePage />
+          </RequireAuth>
+        }
+      />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<Register />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 }

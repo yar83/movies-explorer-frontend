@@ -39,6 +39,7 @@ export default function UserAuthProvider ({ children }) {
       .catch((err) => console.log(err));
   };
 
+
   useEffect(() => {
     Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
       .then((values) => {

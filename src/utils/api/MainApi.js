@@ -68,7 +68,7 @@ class MainApi {
       }
     )
       .then(this.#checkResp)
-      .catch((err) => console.log(err));
+      .catch(() => Promise.reject());
   }
 
   updateUserData(name, email) {
