@@ -5,11 +5,11 @@ import { UserAuthContext } from '../../contexts/UserAuthContext';
 import './index.css';
 
 export default function MainTitle({ burgerBtnClickHandler }) {
-  const currentUser = useContext(UserAuthContext);
+  const { userData } = useContext(UserAuthContext);
 
   return (
     <>
-      {currentUser.userData ? <MainHeaderAuthorized burgerBtnClickHandler={burgerBtnClickHandler} /> : <MainHeader />}
+      {userData ? <MainHeaderAuthorized burgerBtnClickHandler={burgerBtnClickHandler} /> : <MainHeader />}
       <div className="main-title">
         <h1 className="main-title__title">
           Учебный проект студента факультета Веб-разработки

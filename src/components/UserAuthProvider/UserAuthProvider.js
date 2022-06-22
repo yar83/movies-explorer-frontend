@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { UserAuthContext } from '../../contexts/UserAuthContext';
 import mainApi from '../../utils/api/MainApi'; 
+import Preloader from '../Preloader/Preloader';
 
 export default function UserAuthProvider ({ children }) {
   const [userData, setUserData] = useState(null);
   const [userMovies, setUserMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const signin = (email, password, cb) => {
     return mainApi.signin(email, password)
@@ -18,7 +20,6 @@ export default function UserAuthProvider ({ children }) {
       })
       .catch((err) => Promise.reject(err));
   }
-
 
   const signout = (cb) => {
     return mainApi.signout()
@@ -36,16 +37,32 @@ export default function UserAuthProvider ({ children }) {
       .catch((err) => console.log(err));
   };
 
-
-  useEffect(() => {
-    Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
-      .then((values) => {
-        setUserData(values[0]);
-        setUserMovies(values[1]);
+  const checkToken = (authed, notAuthed) => {
+    setLoading(true);
+    mainApi.getUserData()
+      .then((user) => {
+        setUserData(user);
+        mainApi.getUserMovies()
+          .then((movies) => {
+            setUserMovies(movies)
+            setLoading(false)
+            console.log('ili tut');
+            authed();
+          });
+        })
+      .catch((err) => {
+        console.log(err);
+        console.log('i tut');
+        setLoading(false);
+        notAuthed();
       });
-  }, []);
+  };
 
-  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies };
+  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies, loading, checkToken };
 
-  return <UserAuthContext.Provider value={value}>{children}</UserAuthContext.Provider>;
+  return (
+    <UserAuthContext.Provider value={value}>
+      {loading ? <Preloader /> : children}
+    </UserAuthContext.Provider>
+  );
 }
