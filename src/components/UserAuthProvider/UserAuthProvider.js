@@ -6,7 +6,7 @@ import Preloader from '../Preloader/Preloader';
 export default function UserAuthProvider ({ children }) {
   const [userData, setUserData] = useState(null);
   const [userMovies, setUserMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const signin = (email, password, cb) => {
     return mainApi.signin(email, password)
@@ -37,26 +37,20 @@ export default function UserAuthProvider ({ children }) {
       .catch((err) => console.log(err));
   };
 
-  const checkToken = (authed, notAuthed) => {
+  const checkToken = () => {
     setLoading(true);
     mainApi.getUserData()
       .then((user) => {
         setUserData(user);
-        mainApi.getUserMovies()
-          .then((movies) => {
-            setUserMovies(movies)
-            setLoading(false)
-            console.log('ili tut');
-            authed();
-          });
+        setLoading(false)
         })
       .catch((err) => {
         console.log(err);
-        console.log('i tut');
         setLoading(false);
-        notAuthed();
       });
   };
+
+  useEffect(() => checkToken(), []);
 
   const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies, loading, checkToken };
 
