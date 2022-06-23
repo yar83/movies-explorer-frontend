@@ -6,7 +6,7 @@ import Preloader from '../Preloader/Preloader';
 export default function UserAuthProvider ({ children }) {
   const [userData, setUserData] = useState(null);
   const [userMovies, setUserMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!userData);
 
   const signin = (email, password, cb) => {
     return mainApi.signin(email, password)
@@ -39,11 +39,12 @@ export default function UserAuthProvider ({ children }) {
 
   const checkToken = () => {
     setLoading(true);
-    mainApi.getUserData()
-      .then((user) => {
-        setUserData(user);
-        setLoading(false)
-        })
+    Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
+      .then((values) => {
+        setUserData(values[0]);
+        setUserMovies(values[1]);
+        setLoading(false);
+      })
       .catch((err) => {
         console.log(err);
         setLoading(false);
@@ -52,7 +53,7 @@ export default function UserAuthProvider ({ children }) {
 
   useEffect(() => checkToken(), []);
 
-  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies, loading, checkToken };
+  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies, loading };
 
   return (
     <UserAuthContext.Provider value={value}>
