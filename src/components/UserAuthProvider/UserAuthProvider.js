@@ -25,6 +25,7 @@ export default function UserAuthProvider ({ children }) {
     return mainApi.signout()
       .then(() => {
         setUserData(null);
+        localStorage.clear();
         cb();
       });
   };

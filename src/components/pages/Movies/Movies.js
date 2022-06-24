@@ -69,7 +69,6 @@ export default function Movies() {
   useEffect(() => {
     setMoviesCount(getInitMoviesCount().initialCount);
     setFilteredMovies(setMoviesInitState());
-    setIsAfterSearch(true);
   }, []);
 
   const submitHandler = (evt) => {
