@@ -78,7 +78,7 @@ export default function Header() {
       </nav>
       <MicroManButton />
       <IconButton glyph="burger" view="burger" clickHandler={() => setNavigationOpen(true)} />
-      <Navigation isOpen={isNavigationOpen} onClose={() => setNavigationOpen(false)} currLocation={location.pathname} />
+      <Navigation isOpen={isNavigationOpen} onClose={() => setNavigationOpen(false)} />
     </header>
   );
 };
