@@ -53,7 +53,7 @@ export default function MoviesCard(props) {
                   <IconButton
                     view="delete"
                     glyph="white-cross"
-                    handleClick={handleDelBtnClick}
+                    clickHandler={handleDelBtnClick}
                   />
               </div>
             )
