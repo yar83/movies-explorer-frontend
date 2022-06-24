@@ -68,7 +68,7 @@ export default function ProfileForm(props) {
         <div className="profile-form__info">
           <Icon glyph="info-sign" />
           <div className="profile-form__info-tooltip">
-            <span className="profile-form__info-tooltip-text">Введите данные, которые вы хотите изменить. Можно ввести Имя и адрес электронной почты, либо и то и другое одновременно.</span>
+            <span className="profile-form__info-tooltip-text">Введите данные, которые вы хотите изменить.</span>
           </div>
         </div>
       </fieldset>

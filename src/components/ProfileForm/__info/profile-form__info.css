@@ -8,5 +8,5 @@
 
 .profile-form__info:hover >
   .profile-form__info-tooltip {
-    display: block;
+    display: flex;
 }
