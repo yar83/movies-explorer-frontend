@@ -43,7 +43,7 @@ export default function MoviesCard(props) {
                   : <SolidButton
                       view="gray-save"
                       label={actionButtonText.save}
-                      handleClick={handleSaveBtnClick}
+                      clickHandler={handleSaveBtnClick}
                     />
                 }
               </div>
