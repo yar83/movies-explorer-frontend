@@ -29,6 +29,7 @@ export default function Saved() {
         image: {
           url: `${movie['image'].replace('https://api.nomoreparties.co/beatfilm-movies','')}`,
         },
+        trailerLink: movie.trailerLink,
       }
   ));
 

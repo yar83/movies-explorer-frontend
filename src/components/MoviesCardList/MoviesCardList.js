@@ -49,6 +49,7 @@ export default function MoviesCardList({ movies, delCard }) {
           title={movie.nameRU}
           duration={movie.duration}
           posterUrl={`https://api.nomoreparties.co${movie.image.url}`}
+          trailerLink={movie.trailerLink}
           addMovieToSaved={addMovieToSaved}
           delMovieFromSaved={delMovieFromSaved}
           delCard={delCard}

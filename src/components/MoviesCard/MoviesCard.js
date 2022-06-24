@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { UserAuthContext } from '../../contexts/UserAuthContext'; 
 
 export default function MoviesCard(props) {
-  const { id, title, duration = 0, posterUrl, addMovieToSaved, delMovieFromSaved, delCard } = props;
+  const { id, title, duration = 0, posterUrl, trailerLink, addMovieToSaved, delMovieFromSaved, delCard } = props;
   const { userMovies } = useContext(UserAuthContext);
   const [ movieSaved, setMovieSaved ] = useState(false);
   let location = useLocation();
@@ -30,7 +30,7 @@ export default function MoviesCard(props) {
   return (
     <div className="movies-card">
       <div className="movies-card__screen">
-        <MoviePoster url={posterUrl} />
+        <MoviePoster trailerLink={trailerLink} url={posterUrl} />
         {location.pathname === '/movies'
           ? (
               <div className="movies-card__label">
