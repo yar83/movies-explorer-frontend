@@ -6,7 +6,7 @@ import Preloader from '../Preloader/Preloader';
 export default function UserAuthProvider ({ children }) {
   const [userData, setUserData] = useState(null);
   const [userMovies, setUserMovies] = useState([]);
-  const [loading, setLoading] = useState(!userData);
+  const [isLoading, setIsLoading] = useState(true);
 
   const signin = (email, password, cb) => {
     return mainApi.signin(email, password)
@@ -38,26 +38,30 @@ export default function UserAuthProvider ({ children }) {
   };
 
   const checkToken = () => {
-    setLoading(true);
     Promise.all([mainApi.getUserData(), mainApi.getUserMovies()])
       .then((values) => {
         setUserData(values[0]);
         setUserMovies(values[1]);
-        setLoading(false);
+        setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err);
-        setLoading(false);
+        err.json()
+          .then((errMsg) => {
+            console.log(errMsg);
+            setIsLoading(false);
+          });
       });
   };
 
-  useEffect(() => checkToken(), []);
+  useEffect(() => {
+    checkToken();
+  }, []);
 
-  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies, loading };
+  const value = { userData, userMovies, signin, signout, updateUserData, updateUserMovies, checkToken };
 
   return (
     <UserAuthContext.Provider value={value}>
-      {loading ? <Preloader /> : children}
+      {isLoading ? <Preloader/> : children}
     </UserAuthContext.Provider>
   );
 }

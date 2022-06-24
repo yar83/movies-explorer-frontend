@@ -6,5 +6,5 @@ export default function RequireAuth({ children }) {
   const { userData } = useContext(UserAuthContext);
   const location = useLocation();
 
-  return userData ? children : (<Navigate to="/" state={{ from: location }} replace />);
+  return userData ? children : <Navigate to="/" replace={true} />;
 }

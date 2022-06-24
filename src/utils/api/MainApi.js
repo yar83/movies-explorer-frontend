@@ -68,7 +68,6 @@ class MainApi {
       }
     )
       .then(this.#checkResp)
-      .catch(() => Promise.reject());
   }
 
   updateUserData(name, email) {
@@ -123,7 +122,8 @@ class MainApi {
         credentials: 'include',
       }
     )
-      .then(this.#checkResp);
+      .then(this.#checkResp)
+      .catch((err) => Promise.reject(err));
   }
 }
 
