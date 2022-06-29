@@ -10,3 +10,11 @@
 .solid-button:hover {
   opacity: .85;
 }
+
+.solid-button:disabled {
+  cursor: default;
+}
+
+.solid-button:hover:disabled {
+  opacity: 1;
+}

@@ -13,3 +13,8 @@
 .text-button:hover {
   color: var(--gray-text);
 }
+
+.text-button:disabled {
+  cursor: default;
+  color: var(--gray-text);
+}

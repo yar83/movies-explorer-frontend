@@ -4,6 +4,7 @@
   height: 43px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .profile-fieldset__item:nth-child(1) {

@@ -6,7 +6,7 @@ export default function IconButton(props) {
   const {
     view,
     glyph,
-    clickHandler
+    clickHandler,
   } = props;
 
   return (

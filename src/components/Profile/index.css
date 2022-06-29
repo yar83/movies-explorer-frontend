@@ -1,4 +1,5 @@
 @import url(./profile.css);
 @import url(./__body/profile__body.css);
+@import url(./__body/_edit/profile__body_edit.css);
 @import url(./__buttons/profile__buttons.css);
 @import url(./__header/profile__header.css);

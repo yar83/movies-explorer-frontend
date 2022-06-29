@@ -25,3 +25,9 @@ Delete.args = {
   view: 'delete',
   glyph: 'white-cross',
 };
+
+export const Tick = Default.bind({});
+Tick.args = {
+  view: 'tick',
+  glyph: 'tick'
+};

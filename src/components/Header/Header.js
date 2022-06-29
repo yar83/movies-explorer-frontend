@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import GreenSButton from '../ui/buttons/compound/GreenS/GreenSButton';
 import TextButton from '../ui/buttons/text/TextButton';
 import MicroManButton from '../ui/buttons/compound/MicroMan/MicroManButton';
 import IconButton from '../ui/buttons/icon/IconButton';
+import Navigation from '../Navigation/Navigation';
 import { moveButtonText } from '../../shared/constants/buttons/button-text';
 import './index.css';
 
-export default function Header({openNavigation}) {
+export default function Header() {
   let navigate = useNavigate();
+
+  const [isNavigationOpen, setNavigationOpen] = useState(false);
+
   const moveToSavedMoviesPage = () => {
     navigate('../saved-movies');
   };
 
   const moveToMoviesPage = () => {
     navigate('../movies');
-  };
-
-  const moveToProfilePage = () => {
-    navigate('../profile');
   };
 
   const moveToMainPage = () => {
@@ -76,8 +76,9 @@ export default function Header({openNavigation}) {
           </li>
         </ul>
       </nav>
-      <MicroManButton handleClick={moveToProfilePage} />
-      <IconButton glyph="burger" view="burger" clickHandler={openNavigation} />
+      <MicroManButton />
+      <IconButton glyph="burger" view="burger" clickHandler={() => setNavigationOpen(true)} />
+      <Navigation isOpen={isNavigationOpen} onClose={() => setNavigationOpen(false)} />
     </header>
   );
 };

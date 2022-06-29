@@ -1,3 +1,7 @@
 .signin-fieldset__input_error {
   outline: 1px solid var(--red);
 }
+
+.signin-fieldset__input_error:focus {
+  outline: 1px solid var(--red);
+}

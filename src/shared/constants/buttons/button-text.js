@@ -6,6 +6,7 @@ export const actionButtonText = {
   search: 'Поиск',
   edit: 'Редактировать',
   save: 'Сохранить',
+  cancel: 'Отмена',
 };
 
 export const moveButtonText = {

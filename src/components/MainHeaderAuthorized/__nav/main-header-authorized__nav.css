@@ -1,0 +1,9 @@
+.main-header-authorized__nav {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .main-header-authorized__nav {
+    display: block;
+  }
+}

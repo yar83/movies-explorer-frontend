@@ -1,0 +1,8 @@
+.profile-fieldset__general-error {
+  box-sizing: border-box;
+  height: 21px;
+  padding: 10px 0 0 0;
+  margin: 0;
+  color: var(--red);
+  font: normal normal 11px/1 'Inter', sans-serif;
+}

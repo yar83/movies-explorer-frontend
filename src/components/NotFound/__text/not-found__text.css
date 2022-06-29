@@ -1,0 +1,4 @@
+.not-found__text {
+  color: var(--white);
+  font: normal normal 18px/1 'Inter', sans-serif;
+}

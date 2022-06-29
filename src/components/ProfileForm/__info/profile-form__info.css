@@ -1,0 +1,12 @@
+.profile-form__info {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: -22px;
+  bottom: -1px;
+}
+
+.profile-form__info:hover >
+  .profile-form__info-tooltip {
+    display: flex;
+}

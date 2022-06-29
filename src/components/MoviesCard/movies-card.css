@@ -7,7 +7,7 @@
 
 @media (min-width: 321px) {
   .movies-card {
-    gap: min(3.26, 25px);
+    gap: min(3.26vw, 25px);
   }
 }
 

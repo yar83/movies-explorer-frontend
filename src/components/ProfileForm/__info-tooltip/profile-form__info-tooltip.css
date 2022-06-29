@@ -1,0 +1,14 @@
+.profile-form__info-tooltip {
+  width: 280px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  right: -98px;
+  padding: 2px;
+  border: 1px dashed var(--gray-text);
+  background: var(--gray);
+  display: none;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,11 +2,15 @@
   background: transparent;
   border: none;
   outline: none;
-  padding: 0;
+  padding: 0 0 0 0;
   margin: 0;
   border-radius: 4px;
-  height: 23px;
+  height: 20px;
   font: normal 500 11px/1 'Inter', sans-serif;
   color: var(--white);
   width: 100%;
+}
+
+.profile-fieldset__input:focus {
+  outline: 1px solid var(--gray-text);
 }

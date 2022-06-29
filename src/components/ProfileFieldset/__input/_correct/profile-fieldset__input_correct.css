@@ -1,0 +1,7 @@
+.profile-fieldset__input_correct {
+  border: 1px solid var(--border-green);
+}
+
+.profile-fieldset__input_correct:focus {
+  outline: none;
+}

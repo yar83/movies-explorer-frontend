@@ -1,0 +1,7 @@
+.profile-fieldset__input_error {
+  border: 1px solid var(--red);
+}
+
+.profile-fieldset__input_error:focus {
+  outline: none;
+}
